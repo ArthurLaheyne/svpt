@@ -65,6 +65,7 @@ export default function Vainqueur() {
       <ReactTable
         data={data}
         columns={columns}
+        resizable={false}
         minRows="0"
         showPagination={false}
         defaultSorted={[

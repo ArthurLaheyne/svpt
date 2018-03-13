@@ -2,35 +2,35 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Navbar, Nav, NavItem, Jumbotron, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import logo from './logo.svg';
+import './App.css';
 
 import Vainqueur from './Vainqueur';
 import Tournois from './Tournois';
 
 const App = () => (
   <Router>
-    <div>
-      <Navbar inverse collapseOnSelect>
+    <div id="layout-app">
+      <Navbar expanded={false}>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">SVPT</a>
+            <img src={logo} className="App-logo" alt="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to="/tournois">
-              <NavItem eventKey={1}>Tournois</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/vainqueur">
-              <NavItem eventKey={1}>Vainqueur</NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
+        <Nav>
+          <LinkContainer to="/tournois">
+            <NavItem eventKey={1}>Tournois</NavItem>
+          </LinkContainer>
+          <LinkContainer to="/vainqueur">
+            <NavItem eventKey={1}>Vainqueur</NavItem>
+          </LinkContainer>
+        </Nav>
       </Navbar>
-
-      <Route exact path="/" component={Home} />
-      <Route path="/tournois" component={Tournois} />
-      <Route path="/vainqueur" component={Vainqueur} />
+      <div className="main">
+        <Route exact path="/" component={Home} />
+        <Route path="/tournois" component={Tournois} />
+        <Route path="/vainqueur" component={Vainqueur} />
+      </div>
     </div>
   </Router>
 );

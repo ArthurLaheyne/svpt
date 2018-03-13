@@ -26,6 +26,7 @@ export default function Tournoi(props) {
       <ReactTable
         data={props.resultat}
         columns={columns}
+        resizable={false}
         minRows="0"
         showPagination={false}
       />
