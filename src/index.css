@@ -75,3 +75,16 @@ body {
   padding: 1rem;
   -webkit-overflow-scrolling: touch;
 }
+
+#layout-app .tournoi{
+}
+
+#layout-app .tournoi:first-child{
+  margin-top: 30px;
+}
+
+#layout-app .tournoi hr{
+  color: rgba(255, 255, 255, 0.2);
+  margin: 40px auto;
+  width: 100px;
+}

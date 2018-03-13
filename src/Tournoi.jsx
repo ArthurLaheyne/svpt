@@ -21,7 +21,7 @@ const columns = [{
 
 export default function Tournoi(props) {
   return (
-    <div>
+    <div className="tournoi">
       <h3>Tournoi {props.numero} du {props.date} à {props.lieu}</h3>
       <ReactTable
         data={props.resultat}
@@ -30,6 +30,7 @@ export default function Tournoi(props) {
         minRows="0"
         showPagination={false}
       />
+      <hr />
     </div>
   );
 }
