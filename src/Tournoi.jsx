@@ -7,11 +7,11 @@ const columns = [{
   Header: 'Joueur',
   accessor: 'joueur', // String-based value accessors!
 }, {
-  Header: 'Buy-in', // Required because our accessor is not a string
-  accessor: 'buyIn',
-}, {
   Header: 'Gain brut', // Required because our accessor is not a string
   accessor: 'gainBrut',
+}, {
+  Header: 'Buy-in', // Required because our accessor is not a string
+  accessor: 'buyIn',
 }, {
   id: 'Gain net',
   Header: 'Gain net', // Required because our accessor is not a string
@@ -22,13 +22,20 @@ const columns = [{
 export default function Tournoi(props) {
   return (
     <div className="tournoi">
-      <h3>Tournoi {props.numero} du {props.date} à {props.lieu}</h3>
+      <h3>SVPT #{props.numero}</h3>
+      <h5>{props.date}, {props.lieu}</h5>
       <ReactTable
         data={props.resultat}
         columns={columns}
         resizable={false}
         minRows="0"
         showPagination={false}
+        defaultSorted={[
+          {
+            id: "gainBrut",
+            desc: true
+          }
+        ]}
       />
       <hr />
     </div>
