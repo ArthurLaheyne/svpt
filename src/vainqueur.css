@@ -1,3 +1,7 @@
+.hidden {
+  opacity: 0;
+}
+
 .winner-is-container {
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */

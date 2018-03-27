@@ -1,64 +1,443 @@
 {
-  "joueurs": [
-      "arthur",
-      "dave",
-      "benj"
-  ],
-	"tournois": [{
-		"lieu": "ici",
-		"date": "today",
-		"resultat": [{
-			"joueur": "arthur",
-			"buyIn": 3,
-			"gainBrut": 0
-		},
-		{
-			"joueur": "dave",
-			"buyIn": 6,
-			"gainBrut": 3
-		},
-		{
-			"joueur": "benj",
-			"buyIn": 3,
-			"gainBrut": 9
-		}]
-	},
-	{
-		"lieu": "ici2",
-		"date": "today2",
-		"resultat": [{
-			"joueur": "arthur",
-			"buyIn": 3,
-			"gainBrut": 3
-		},
-		{
-			"joueur": "dave",
-			"buyIn": 3,
-			"gainBrut": 6
-		},
-		{
-			"joueur": "benj",
-			"buyIn": 3,
-			"gainBrut": 0
-		}]
-	},
-	{
-		"lieu": "Arthur's",
-		"date": "11/12/2017",
-		"resultat": [{
-			"joueur": "arthur",
-			"buyIn": 3,
-			"gainBrut": 0
-		},
-		{
-			"joueur": "dave",
-			"buyIn": 3,
-			"gainBrut": 9
-		},
-		{
-			"joueur": "benj",
-			"buyIn": 3,
-			"gainBrut": 0
-		}]
-	}]
+	"tournois": [
+    {
+  		"lieu": "chez Dave",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 12
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Hugo",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 15
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Arthur",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 9
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Dave",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 9
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Arthur",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 9
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Ben",
+  		"date": "22 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 12
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Dave",
+  		"date": "30 mars 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 12
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 6,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Arthur",
+  		"date": "10 avril 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 9
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Hugo",
+  		"date": "13 avril 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 15
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "antoine",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Dave",
+  		"date": "28 avril 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 12
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Phil",
+  		"date": "9 juin 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "pierre",
+    			"buyIn": 3,
+    			"gainBrut": 15
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "antoine",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "octave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Phil",
+  		"date": "20 juin 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 21
+    		},
+    		{
+    			"joueur": "pierre",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "antoine",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Ben",
+  		"date": "29 juin 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 18
+    		},
+    		{
+    			"joueur": "adrien",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "pierre",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	},
+    {
+  		"lieu": "chez Arthur",
+  		"date": "20 juillet 2017 (pas sur)",
+  		"resultat": [
+        {
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 9
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
+  	}
+	]
 }

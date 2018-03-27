@@ -48,8 +48,8 @@ const columns = [{
   Header: 'ROI',
   accessor: joueur => Math.round(joueur.roi),
 },{
-  Header: 'Gain brut',
-  accessor: 'gainBrut',
+  Header: 'Gain net',
+  accessor: 'gainNet',
 },{
   Header: 'Victoires',
   accessor: 'nbrGagnees',
@@ -57,8 +57,8 @@ const columns = [{
   Header: 'Tournois',
   accessor: 'nbrJouees',
 },{
-  Header: 'Gain net',
-  accessor: 'gainNet',
+  Header: 'Gain brut',
+  accessor: 'gainBrut',
 },{
   Header: 'Buy-in',
   accessor: 'buyIn',
@@ -87,21 +87,25 @@ export default class Vainqueur extends Component {
       </div>
     );
     const winnerIs = (
-      <div className="winner-is-container">
-        <h1>{ vainqueur.joueur }</h1>
-        <ReactTable
-          data={data}
-          columns={columns}
-          resizable={false}
-          minRows="0"
-          showPagination={false}
-          defaultSorted={[
-            {
-              id: "roi",
-              desc: true
-            }
-          ]}
-        />
+      <div>
+        <div className="winner-is-container hidden">
+          <h1>{ vainqueur.joueur }</h1>
+          <ReactTable
+            data={data}
+            columns={columns}
+            resizable={false}
+            minRows="0"
+            showPagination={false}
+            defaultSorted={[
+              {
+                id: "roi",
+                desc: true
+              }
+            ]}
+          />
+        </div>
+        <img src="https://media.giphy.com/media/3oz8xLd9DJq2l2VFtu/giphy.gif" />
+        <p>L'heure n'est pas venue, dégage</p>
       </div>
     );
     return this.state.showWinner ? winnerIs : button;

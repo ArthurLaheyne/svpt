@@ -6,7 +6,7 @@ const data = require('./mock.json');
 const tournois = data.tournois.map((tournoi, key) => (
   <Tournoi key={key.toString()}
     resultat={tournoi.resultat}
-    numero={key.toString()}
+    numero={(key + 1).toString()}
     date={tournoi.date}
     lieu={tournoi.lieu}
   />
