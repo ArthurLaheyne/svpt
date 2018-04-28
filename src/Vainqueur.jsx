@@ -88,7 +88,7 @@ export default class Vainqueur extends Component {
     );
     const winnerIs = (
       <div>
-        <div className="winner-is-container hidden">
+        <div className="winner-is-container">
           <h1>{ vainqueur.joueur }</h1>
           <ReactTable
             data={data}
@@ -104,8 +104,6 @@ export default class Vainqueur extends Component {
             ]}
           />
         </div>
-        <img src="https://media.giphy.com/media/3oz8xLd9DJq2l2VFtu/giphy.gif" />
-        <p>L'heure n'est pas venue, dégage</p>
       </div>
     );
     return this.state.showWinner ? winnerIs : button;
