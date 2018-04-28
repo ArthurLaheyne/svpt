@@ -4,7 +4,8 @@ import './index.css';
 import './table.css';
 // eslint-disable-next-line
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { unregister } from './registerServiceWorker';
 
+unregister();
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
