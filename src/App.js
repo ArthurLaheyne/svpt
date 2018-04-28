@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from './logo.svg';
@@ -36,9 +36,11 @@ const App = () => (
 );
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
+  <Redirect
+    to={{
+      pathname: "/tournois"
+    }}
+  />
 );
 
 export default App;

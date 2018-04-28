@@ -22,7 +22,7 @@ const columns = [{
 export default function Tournoi(props) {
   return (
     <div className="tournoi">
-      <h3>SVPT #{props.numero}</h3>
+      <h3>{props.id}</h3>
       <h5>{props.date}, {props.lieu}</h5>
       <ReactTable
         data={props.resultat}

@@ -3,10 +3,10 @@ import Tournoi from './Tournoi';
 
 const data = require('./mock.json');
 
-const tournois = data.tournois.map((tournoi, key) => (
+const tournois = data.tournois.slice(0).reverse().map((tournoi, key) => (
   <Tournoi key={key.toString()}
     resultat={tournoi.resultat}
-    numero={(key + 1).toString()}
+    id={(tournoi.id)}
     date={tournoi.date}
     lieu={tournoi.lieu}
   />
