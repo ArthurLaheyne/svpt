@@ -18,7 +18,7 @@ const App = () => (
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <LinkContainer to="/tournois">
+          <LinkContainer to="/">
             <NavItem eventKey={1}>Tournois</NavItem>
           </LinkContainer>
           <LinkContainer to="/vainqueur">
@@ -27,20 +27,11 @@ const App = () => (
         </Nav>
       </Navbar>
       <div className="main">
-        <Route exact path="/" component={Home} />
-        <Route path="/tournois" component={Tournois} />
+        <Route exact path="/" component={Tournois} />
         <Route path="/vainqueur" component={Vainqueur} />
       </div>
     </div>
   </Router>
-);
-
-const Home = () => (
-  <Redirect
-    to={{
-      pathname: "/tournois"
-    }}
-  />
 );
 
 export default App;
