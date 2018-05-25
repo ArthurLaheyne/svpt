@@ -3,7 +3,13 @@ import Tournoi from './Tournoi';
 
 const data = require('./mock.json');
 
-const tournois = data.tournois.slice(0).reverse().map((tournoi, key) => (
+const tournois = data.tournois.slice(0).reverse();
+tournois.forEach((tournoi, key) => (
+  tournoi.resultat.forEach((joueur, key) => (
+    joueur.position = key + 1
+  ))
+));
+const content = tournois.map((tournoi, key) => (
   <Tournoi key={key.toString()}
     resultat={tournoi.resultat}
     id={(tournoi.id)}
@@ -16,7 +22,7 @@ const tournois = data.tournois.slice(0).reverse().map((tournoi, key) => (
 export default function Tournois() {
   return (
     <div>
-      {tournois}
+      {content}
     </div>
   );
 }

@@ -4,6 +4,10 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const columns = [{
+  id: 'Position',
+  Header: '', // Required because our accessor is not a string
+  accessor: d => '#' + d.position,
+}, {
   Header: 'Joueur',
   accessor: 'joueur', // String-based value accessors!
 }, {
