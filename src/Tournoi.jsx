@@ -2,14 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import Avatar from './Avatar';
 
 const columns = [{
   id: 'Position',
   Header: '', // Required because our accessor is not a string
   accessor: d => '#' + d.position,
+  maxWidth: 50
 }, {
   Header: 'Joueur',
-  accessor: 'joueur', // String-based value accessors!
+  accessor: 'joueur',
+  Cell: row => (
+    <div>
+      <Avatar joueur={row.value} width="30" height="30" /> {row.value}
+    </div>
+  )
 }, {
   Header: 'Gain brut', // Required because our accessor is not a string
   accessor: 'gainBrut',
@@ -36,8 +43,8 @@ export default function Tournoi(props) {
         showPagination={false}
         defaultSorted={[
           {
-            id: "gainBrut",
-            desc: true
+            id: "position",
+            desc: false
           }
         ]}
       />

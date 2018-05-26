@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import './vainqueur.css';
+import Avatar from './Avatar';
 
 const mock = require('./mock.json');
 
@@ -43,7 +44,12 @@ data.forEach( (joueur) => {
 const columns = [{
   Header: 'Joueur',
   accessor: 'joueur',
-},{
+  Cell: row => (
+    <div>
+      <Avatar joueur={row.value} width="30" height="30"/> {row.value}
+    </div>
+  )
+}, {
   id: 'roi',
   Header: 'ROI',
   accessor: joueur => Math.round(joueur.roi),
@@ -89,7 +95,10 @@ export default class Vainqueur extends Component {
     const winnerIs = (
       <div>
         <div className="winner-is-container">
-          <h1>{ vainqueur.joueur }</h1>
+          <h1>
+            <Avatar joueur={vainqueur.joueur} width="100" height="100"/><br />
+            { vainqueur.joueur }
+          </h1>
           <ReactTable
             data={data}
             columns={columns}
@@ -98,7 +107,7 @@ export default class Vainqueur extends Component {
             showPagination={false}
             defaultSorted={[
               {
-                id: "roi",
+                id: "gainNet",
                 desc: true
               }
             ]}
@@ -106,7 +115,8 @@ export default class Vainqueur extends Component {
         </div>
       </div>
     );
-    return this.state.showWinner ? winnerIs : button;
+    // return this.state.showWinner ? winnerIs : button;
+    return winnerIs;
   }
 
 }
