@@ -7,6 +7,8 @@ import './App.css';
 
 import Vainqueur from './Vainqueur';
 import Tournois from './Tournois';
+import Home from './Home';
+import Homeee from './Homeee';
 
 const App = () => (
   <Router>
@@ -19,6 +21,12 @@ const App = () => (
         </Navbar.Header>
         <Nav>
           <LinkContainer to="/">
+            <NavItem eventKey={1}>Home</NavItem>
+          </LinkContainer>
+          {/* <LinkContainer to="/homeee">
+            <NavItem eventKey={1}>Homeee</NavItem>
+          </LinkContainer> */}
+          <LinkContainer to="/tournois">
             <NavItem eventKey={1}>Tournois</NavItem>
           </LinkContainer>
           <LinkContainer to="/vainqueur">
@@ -27,7 +35,9 @@ const App = () => (
         </Nav>
       </Navbar>
       <div className="main">
-        <Route exact path="/" component={Tournois} />
+        <Route exact path="/" component={Home} />
+        <Route path="/homeee" component={Homeee} />
+        <Route path="/tournois" component={Tournois} />
         <Route path="/vainqueur" component={Vainqueur} />
       </div>
     </div>

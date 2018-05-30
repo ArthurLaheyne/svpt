@@ -780,6 +780,57 @@
     			"gainBrut": 0
     		}
       ]
+  	},{
+  		"lieu": "chez Hugo",
+  		"date": "29 mai 2018",
+  		"id": "SVPT #24",
+  		"resultat": [
+        {
+    			"joueur": "arthur",
+    			"buyIn": 3,
+    			"gainBrut": 27
+    		},
+    		{
+    			"joueur": "ben",
+    			"buyIn": 3,
+    			"gainBrut": 3
+    		},
+    		{
+    			"joueur": "hugo",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "antoine",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "dave",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "anouck",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "phil",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "pierre",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		},
+    		{
+    			"joueur": "math",
+    			"buyIn": 3,
+    			"gainBrut": 0
+    		}
+      ]
   	}
 	]
 }

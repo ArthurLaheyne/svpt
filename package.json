@@ -4,16 +4,17 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
+    "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-json-pretty": "^1.7.4",
-    "react-json-view": "^1.16.1",
+    "react-dom": "^16.4.0",
+    "react-json-pretty": "^1.7.6",
+    "react-json-view": "^1.17.0",
+    "react-masonry-component": "^6.2.0",
     "react-router": "^4.2.0",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "react-table": "^6.8.0"
+    "react-table": "^6.8.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,10 +23,10 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.18.2",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.8.2"
   }
 }
