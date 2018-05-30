@@ -10,4 +10,5 @@ export default {
   'cha': require('./images/halow/Witch-01.png'),
   'adrien': require('./images/halow/Pennywise-01.png'),
   'octave': require('./images/halow/The Count-01.png'),
+  'anouck': require('./images/halow/Jake Sulley-01.png'),
 }
