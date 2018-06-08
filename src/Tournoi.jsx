@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import Avatar from './Avatar';
+import AvatarMini from './AvatarMini';
 
 const columns = [{
   id: 'Position',
@@ -14,7 +15,7 @@ const columns = [{
   accessor: 'joueur',
   Cell: row => (
     <div>
-      <Avatar joueur={row.value} width="30" height="30" /> {row.value}
+      <AvatarMini joueur={row.value} width="30" height="30" /> {row.value}
     </div>
   )
 }, {
