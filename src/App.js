@@ -8,17 +8,11 @@ import './App.css';
 import Vainqueur from './Vainqueur';
 import Tournois from './Tournois';
 import Home from './Home';
-import Homeee from './Homeee';
 
 const App = () => (
   <Router>
     <div id="layout-app">
       <Navbar defaultExpanded={false}>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <img src={logo} className="App-logo" alt="logo" />
-          </Navbar.Brand>
-        </Navbar.Header>
         <Nav>
           <LinkContainer to="/">
             <NavItem eventKey={1}>Home</NavItem>
@@ -36,7 +30,6 @@ const App = () => (
       </Navbar>
       <div className="main">
         <Route exact path="/" component={Home} />
-        <Route path="/homeee" component={Homeee} />
         <Route path="/tournois" component={Tournois} />
         <Route path="/vainqueur" component={Vainqueur} />
       </div>
