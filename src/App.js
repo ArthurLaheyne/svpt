@@ -8,6 +8,7 @@ import './App.css';
 import Vainqueur from './Vainqueur';
 import Tournois from './Tournois';
 import Home from './Home';
+import Home2 from './Home2';
 
 const App = () => (
   <Router>
@@ -30,6 +31,7 @@ const App = () => (
       </Navbar>
       <div className="main">
         <Route exact path="/" component={Home} />
+        <Route path="/home2" component={Home2} />
         <Route path="/tournois" component={Tournois} />
         <Route path="/vainqueur" component={Vainqueur} />
       </div>

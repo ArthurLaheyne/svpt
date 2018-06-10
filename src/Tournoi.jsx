@@ -57,7 +57,6 @@ export default function Tournoi(props) {
 
 Tournoi.propTypes = {
   resultat: PropTypes.array.isRequired,
-  numero: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   lieu: PropTypes.string.isRequired,
 };
