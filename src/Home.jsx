@@ -46,9 +46,9 @@ export default function Tournois() {
           <p>
             Dernier gagnant
           </p>
-          <img src="https://media.giphy.com/media/26ufdkXNlsT1RAEHC/giphy.gif" />
+          <img src="https://media.giphy.com/media/5USTijryafZEQ/giphy.gif" />
           <p className="top">
-            {dernierGagnantJoueur}
+            {/*dernierGagnantJoueur*/}Math
           </p>
         </div>
       </div>
