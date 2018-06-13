@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from './logo.svg';
 import './App.css';
 
 import Vainqueur from './Vainqueur';
@@ -16,7 +15,7 @@ const App = () => (
       <Navbar defaultExpanded={false}>
         <Nav>
           <LinkContainer to="/">
-            <NavItem eventKey={1}>Home</NavItem>
+            <NavItem eventKey={1}><i className="fas fa-home"></i></NavItem>
           </LinkContainer>
           {/* <LinkContainer to="/homeee">
             <NavItem eventKey={1}>Homeee</NavItem>
@@ -25,7 +24,7 @@ const App = () => (
             <NavItem eventKey={1}>Tournois</NavItem>
           </LinkContainer>
           <LinkContainer to="/vainqueur">
-            <NavItem eventKey={1}>Vainqueur</NavItem>
+            <NavItem eventKey={1}>Stats</NavItem>
           </LinkContainer>
         </Nav>
       </Navbar>
