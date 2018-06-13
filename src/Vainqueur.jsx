@@ -42,35 +42,6 @@ data.forEach( (joueur) => {
   joueur.roi = (100/joueur.buyIn) * joueur.gainNet;
 });
 
-const columns = [{
-  Header: 'Joueur',
-  accessor: 'joueur',
-  Cell: row => (
-    <div>
-      <AvatarMini joueur={row.value} width="30" height="30"/> {row.value}
-    </div>
-  )
-}, {
-  id: 'roi',
-  Header: 'ROI',
-  accessor: joueur => Math.round(joueur.roi),
-},{
-  Header: 'Gain net',
-  accessor: 'gainNet',
-},{
-  Header: 'Victoires',
-  accessor: 'nbrGagnees',
-},{
-  Header: 'Tournois',
-  accessor: 'nbrJouees',
-},{
-  Header: 'Gain brut',
-  accessor: 'gainBrut',
-},{
-  Header: 'Buy-in',
-  accessor: 'buyIn',
-}];
-
 
 export default class Vainqueur extends Component {
 
@@ -108,8 +79,7 @@ export default class Vainqueur extends Component {
             showPagination={false}
             defaultSorted={[
               {
-                id: "gainNet",
-                desc: true
+                id: "gainNet"
               }
             ]}
           />
@@ -121,6 +91,41 @@ export default class Vainqueur extends Component {
   }
 
 }
+
+const columns = [{
+  Header: 'Joueur',
+  accessor: 'joueur',
+  Cell: row => (
+    <div>
+      <AvatarMini joueur={row.value} width="30" height="30"/> {row.value}
+    </div>
+  )
+}, {
+  id: 'roi',
+  Header: 'ROI',
+  accessor: joueur => Math.round(joueur.roi),
+  sortMethod: inverseSort
+},{
+  Header: 'Gain net',
+  accessor: 'gainNet',
+  sortMethod: inverseSort
+},{
+  Header: 'Victoires',
+  accessor: 'nbrGagnees',
+  sortMethod: inverseSort
+},{
+  Header: 'Tournois',
+  accessor: 'nbrJouees',
+  sortMethod: inverseSort
+},{
+  Header: 'Gain brut',
+  accessor: 'gainBrut',
+  sortMethod: inverseSort
+},{
+  Header: 'Buy-in',
+  accessor: 'buyIn',
+  sortMethod: inverseSort
+}];
 
 
 function getPremier(tournoi) {
@@ -146,4 +151,23 @@ function getPremierROI(joueurs) {
         0)
   });
   return joueurs2[0];
+}
+
+
+function inverseSort(a, b, desc) {
+  // force null and undefined to the bottom
+  a = a === null || a === undefined ? -Infinity : a;
+  b = b === null || b === undefined ? -Infinity : b;
+  // force any string values to lowercase
+  a = typeof a === "string" ? a.toLowerCase() : a;
+  b = typeof b === "string" ? b.toLowerCase() : b;
+  // Return either 1 or -1 to indicate a sort priority
+  if (a < b) {
+    return 1;
+  }
+  if (a > b) {
+    return -1;
+  }
+  // returning 0 or undefined will use any subsequent column sorting methods or the row index as a tiebreaker
+  return 0;
 }
