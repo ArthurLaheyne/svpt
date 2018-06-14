@@ -39,3 +39,7 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
 }
+
+.navbar-nav .active {
+  background-color: black;
+}

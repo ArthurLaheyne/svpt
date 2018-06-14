@@ -1,0 +1,78 @@
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.tile {
+  width: 300px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin: 15px;
+  -webkit-box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  height: 40px;
+  margin: 0;
+  background: black;
+  padding: 10px;
+}
+
+.gagnant-container {
+  height: 170px;
+}
+
+.gagnant-container:after {
+  content: ""; /* Important, sinon l'élément n'est pas généré. */
+  display: table;
+  clear: both;
+}
+
+.gagnant {
+  display: inline-block;
+  width: 200px;
+  height: 100%;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  font-size: 33px;
+  text-transform: uppercase;
+  color: #b81fc2;
+  font-weight: bold;
+}
+
+.gagnant-thune {
+	display: inline-block;
+	width: 100px;
+  height: 66px;
+	font-size: 46px;
+	text-align: center;
+  text-transform: uppercase;
+	margin: 15px 0 0 0;
+  padding-right: 15px;
+	color: #c121e9;
+  overflow: auto;
+}
+
+.gagnant-pseudo {
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+}
+
+.deuxieme {
+	text-align: center;
+  padding-right: 15px;
+}
+
+.autre-joueurs {
+  text-align: center;text-align: center;
+  height: 39px;
+  overflow: auto;
+  width: 300px;
+  white-space: nowrap;
+}

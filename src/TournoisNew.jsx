@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import Tile from './Tile';
 import './grid-tournoi.css';
+import loader from './images/Blocks-0.5s-40px.gif';
 
-class Home2 extends Component {
-  state = {tournois: []}
+class TournoisNew extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      tournois: [],
+      ready: false
+    };
+  }
 
   componentDidMount() {
     fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
       .then(res => res.json())
-      .then(tournois => this.setState({ tournois }));
+      .then(tournois => this.setState({
+        tournois : tournois,
+        ready: true
+      }));
   }
 
   render() {
-
-    return (
+    return this.state.ready ? (
       <div className="grid">
       {this.state.tournois.slice(0).reverse().map((tournoi, i) => {
         return (
@@ -29,11 +39,15 @@ class Home2 extends Component {
         )
       })}
       </div>
-    );
+    ) : (
+      <div className="total-center">
+        <img src={loader} alt="loading"/>
+      </div>
+    )
   }
 }
 
-export default Home2;
+export default TournoisNew;
 
 
 function getGagnant(tournoi) {
