@@ -6,7 +6,7 @@
 
 .tile {
   width: 300px;
-  height: 250px;
+  height: 278px;
   background-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   margin: 15px;
@@ -22,7 +22,7 @@
 }
 
 .gagnant-container {
-  height: 170px;
+  height: 198px;
 }
 
 .gagnant-container:after {
