@@ -14,7 +14,7 @@ class TournoisNew extends Component {
   }
 
   componentDidMount() {
-    fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
+    fetch('http://localhost:5000/tournois')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -32,41 +32,6 @@ class TournoisNew extends Component {
         </div>
       );
     } else {
-      const data = [];
-      this.state.tournois.forEach( (tournoi) => {
-        tournoi.premier = getGagnant(tournoi);
-        tournoi.resultat.forEach( (resultat) => {
-          resultat.joueur = resultat.joueur.pseudo
-          let joueur = data.find( (joueur) => {
-            return joueur.joueur === resultat.joueur;
-          });
-          if(joueur) {
-            joueur.buyIn += resultat.buyIn;
-            joueur.gainBrut += resultat.gainBrut;
-            joueur.gainNet += resultat.gainBrut - resultat.buyIn;
-            joueur.nbrJouees += 1;
-            if(joueur.joueur === tournoi.premier.pseudo) {
-              joueur.nbrGagnees += 1;
-            }
-          }
-          else {
-            data.push({
-              joueur: resultat.joueur,
-              buyIn: resultat.buyIn,
-              gainBrut: resultat.gainBrut,
-              gainNet: resultat.gainBrut - resultat.buyIn,
-              nbrJouees: 1,
-              nbrGagnees: (resultat.joueur === tournoi.premier.pseudo) ? 1 : 0,
-            });
-          }
-          if(resultat.joueur === tournoi.premier.pseudo) {
-            let joueur2 = data.find( (j) => {
-              return j.joueur === resultat.joueur;
-            });
-            tournoi.premier.victoires = joueur2.nbrGagnees;
-          }
-        });
-      });
       return (
         <div className="grid">
         {this.state.tournois.slice(0).reverse().map((tournoi, i) => {
@@ -91,11 +56,6 @@ class TournoisNew extends Component {
 export default TournoisNew;
 
 
-function getGagnant(tournoi) {
-  var joueurs = tournoi.resultat.slice();
-  return joueurs[0].joueur;
-}
-
 function getGagnantThune(tournoi) {
   var joueurs = tournoi.resultat.slice();
   return joueurs[0].gainBrut;
@@ -112,10 +72,10 @@ function getDeuxiemeThune(tournoi) {
 }
 
 function getAutreJoueurs(tournoi) {
-  tournoi.resultat.shift();
-  tournoi.resultat.shift();
   let autreJoueur = tournoi.resultat.map( row => {
     return row.joueur;
   })
+  autreJoueur.shift();
+  autreJoueur.shift();
   return autreJoueur;
 }

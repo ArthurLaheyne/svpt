@@ -25,13 +25,13 @@ class Tile extends Component {
             <span>{this.props.gagnantThune}€</span>
           </div>
           <div className="deuxieme">
-            <AvatarMini joueur={this.props.deuxieme} width="30" height="30"/> {this.props.deuxiemeThune}€
+            <AvatarMini joueur={this.props.deuxieme.pseudo} width="30" height="30"/> {this.props.deuxiemeThune}€
           </div>
         </div>
         <div className="autre-joueurs">
         {this.props.autreJoueurs.map((joueur, i) => {
            return (
-             <AvatarMini joueur={joueur} width="30" height="30" key={"autre-joueur-" + joueur}/>
+             <AvatarMini joueur={joueur.pseudo} width="30" height="30" key={"autre-joueur-" + joueur.pseudo}/>
            )
         })}
         </div>

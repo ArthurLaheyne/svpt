@@ -17,7 +17,6 @@ class Login extends Component {
   }
 
   responseFacebook = (response) => {
-    console.log("front connexion : " + JSON.stringify(response));
     fetch('https://guarded-shelf-83545.herokuapp.com/auth/facebook/token', {
       method: 'post',
       headers: {
@@ -27,9 +26,7 @@ class Login extends Component {
       body: JSON.stringify({access_token: response.accessToken})
     })
       .then(res => {
-        console.log(res);
         res.json().then((data) => {
-          console.log(data);
           if (data.joueur) {
             this.setState({
               joueur: data.joueur
@@ -37,10 +34,6 @@ class Login extends Component {
           }
         });
       });
-  }
-
-  onClick() {
-
   }
 
   render() {
