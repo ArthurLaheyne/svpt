@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/tournois')
+    fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
       .then(res => res.json())
       .then(res => {
         this.setState({
