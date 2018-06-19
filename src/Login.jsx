@@ -39,7 +39,7 @@ class Login extends Component {
   render() {
     if (this.state.joueur) {
       return (
-        <span>{this.state.joueur.pseudo}</span>
+        <span className="facebook">{this.state.joueur.pseudo}</span>
       )
     }
     return (
