@@ -14,7 +14,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
+    console.log(process.env);
+    fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(res => {
         this.setState({
