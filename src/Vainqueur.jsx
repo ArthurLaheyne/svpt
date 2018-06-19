@@ -15,10 +15,12 @@ export default class Vainqueur extends Component {
   componentDidMount() {
     fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
       .then(res => res.json())
-      .then(tournois => this.setState({
-        tournois : tournois,
-        ready: true
-      }));
+      .then(data => {
+        this.setState({
+          tournois : data.data,
+          ready: true
+        });
+      });
   }
 
   render() {

@@ -8,6 +8,8 @@ import Vainqueur from './Vainqueur';
 import TournoisNew from './TournoisNew';
 import Home from './Home';
 import Home2 from './Home2';
+import Login from './Login';
+
 
 const App = () => (
   <Router>
@@ -23,6 +25,9 @@ const App = () => (
           <LinkContainer to="/vainqueur">
             <NavItem eventKey={3}>Stats</NavItem>
           </LinkContainer>
+          <li>
+            <Login />
+          </li>
         </Nav>
       </Navbar>
       <div className="main">

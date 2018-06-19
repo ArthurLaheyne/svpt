@@ -7,18 +7,22 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: null,
       tournois: [],
       ready: false
     };
   }
 
   componentDidMount() {
-    fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
+    fetch('http://localhost:5000/tournois')
       .then(res => res.json())
-      .then(tournois => this.setState({
-        tournois : tournois,
-        ready: true
-      }));
+      .then(res => {
+        this.setState({
+          user: res.user,
+          tournois: res.data,
+          ready: true
+        })
+      });
   }
 
   render() {
