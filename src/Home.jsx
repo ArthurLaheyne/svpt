@@ -14,7 +14,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(process.env);
     fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(res => {
