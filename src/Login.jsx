@@ -63,7 +63,6 @@ class Login extends Component {
           textButton="Log FB"
           onClick={this.onClick}
           callback={this.responseFacebook}
-          textButton="Log FB"
         />
       </div>
     );
