@@ -18,7 +18,7 @@ class Login extends Component {
   }
 
   responseFacebook = (response) => {
-    fetch('https://guarded-shelf-83545.herokuapp.com/auth/facebook/token', {
+    fetch(process.env.REACT_APP_API_URL + '/auth/facebook/token', {
       method: 'post',
       headers: {
         'Accept': 'application/json, text/plain, */*',
