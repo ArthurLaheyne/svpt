@@ -48,6 +48,7 @@ class Login extends Component {
           appId="2593367260889259"
           autoLoad={true}
           fields="name,email,picture"
+          textButton="Log FB"
           onClick={this.onClick}
           callback={this.responseFacebook} />
       </div>

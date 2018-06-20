@@ -25,7 +25,7 @@ const App = () => (
           <LinkContainer to="/vainqueur">
             <NavItem eventKey={3}>Stats</NavItem>
           </LinkContainer>
-          <li>
+          <li className="right">
             <Login />
           </li>
         </Nav>
