@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/tournois')
+    fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(res => {
         this.setState({

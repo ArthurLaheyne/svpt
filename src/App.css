@@ -88,6 +88,7 @@
 }
 
 .facebook {
+  height: 50px;
   font-family: Helvetica,sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
@@ -102,4 +103,8 @@
   border: calc(.06887vw + .67769px) solid #4c69ba;
   padding: calc(.34435vw + 13.38843px) calc(.34435vw + 18.38843px);
   height: 100%;
+}
+
+.kep-login-facebook{
+  height: 50px;
 }

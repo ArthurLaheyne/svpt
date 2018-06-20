@@ -6,14 +6,15 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      joueur: null
+      joueur: null,
+      connecting: false
     };
   }
 
   componentDidMount() {
-    // fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
-    //   .then(res => res.json())
-    //   .then(tournois => this.setState({ tournois }));
+    this.setState({
+      connecting: false
+    });
   }
 
   responseFacebook = (response) => {
@@ -29,17 +30,28 @@ class Login extends Component {
         res.json().then((data) => {
           if (data.joueur) {
             this.setState({
-              joueur: data.joueur
+              joueur: data.joueur,
+              connecting: false
             })
           }
         });
       });
   }
 
+  logoutCallback = () => {
+    this.setState({
+      joueur: null
+    })
+  }
+
   render() {
     if (this.state.joueur) {
       return (
-        <span className="facebook">{this.state.joueur.pseudo}</span>
+        <span onClick={() => this.logoutCallback()} className="facebook">{this.state.joueur.pseudo}</span>
+      )
+    } else if (this.state.connecting) {
+      return (
+        <span className="facebook">connecting...</span>
       )
     }
     return (
@@ -50,7 +62,9 @@ class Login extends Component {
           fields="name,email,picture"
           textButton="Log FB"
           onClick={this.onClick}
-          callback={this.responseFacebook} />
+          callback={this.responseFacebook}
+          textButton="Log FB"
+        />
       </div>
     );
   }
