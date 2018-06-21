@@ -7,7 +7,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      joueur: {pseudo: 'arthur'},
+      joueur: null,
       connecting: false,
       failed: false,
       showMenu: false,
@@ -82,7 +82,7 @@ class Login extends Component {
           <AvatarMini joueur={this.state.joueur.pseudo} width="30" height="30"/> <span >{this.state.joueur.pseudo} </span>
           <div id="account-menu" style={{ display: this.state.showMenu ? "block" : "none"}}>
             <ul>
-              <li onClick={this.logout}>DECONNEXION</li>
+              <li onClick={this.logout}>Déconnexion</li>
             </ul>
           </div>
         </div>
