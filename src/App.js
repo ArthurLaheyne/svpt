@@ -20,10 +20,10 @@ const App = () => (
             <NavItem eventKey={1}><i className="fas fa-home"></i></NavItem>
           </LinkContainer>
           <LinkContainer to="/tournois">
-            <NavItem eventKey={2}>Tournois</NavItem>
+            <NavItem eventKey={2}><i className="fas fa-trophy"></i></NavItem>
           </LinkContainer>
           <LinkContainer to="/vainqueur">
-            <NavItem eventKey={3}>Stats</NavItem>
+            <NavItem eventKey={3}><i className="fas fa-chart-bar"></i></NavItem>
           </LinkContainer>
           <li className="right">
             <Login />

@@ -7,7 +7,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      joueur: null,
+      joueur: {pseudo: 'arthur'},
       connecting: false,
       failed: false,
       showMenu: false,

@@ -51,7 +51,7 @@ class Home extends Component {
               <p>
                 Dernier gagnant
               </p>
-              <img src="https://media.giphy.com/media/5USTijryafZEQ/giphy.gif" alt="gif"/>
+              <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
               <p className="top">
                 {dernierGagnantJoueur}
               </p>
@@ -88,6 +88,426 @@ class Home extends Component {
               </p>
             </div>
           </div>
+            <div className="news n3">
+              <div className="content">
+                <p>
+                  Dernier gagnant
+                </p>
+                <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                <p className="top">
+                  {dernierGagnantJoueur}
+                </p>
+              </div>
+            </div>
+            <div className="news n2">
+              <div className="content">
+                <p>
+                  Gagnant de 2017
+                </p>
+                <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                <p className="top">
+                  Ben
+                </p>
+              </div>
+            </div>
+            <div className="news n4">
+              <div className="content">
+                <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                <p>
+                  <span className="top">19</span><br />
+                  Absences d'Adrien consécutives
+                </p>
+              </div>
+            </div>
+            <div className="news n1">
+              <div className="content">
+                <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                <p className="top">
+                  {total} €
+                </p>
+                <p>
+                  Mis en jeu au total
+                </p>
+              </div>
+            </div>
+              <div className="news n3">
+                <div className="content">
+                  <p>
+                    Dernier gagnant
+                  </p>
+                  <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                  <p className="top">
+                    {dernierGagnantJoueur}
+                  </p>
+                </div>
+              </div>
+              <div className="news n2">
+                <div className="content">
+                  <p>
+                    Gagnant de 2017
+                  </p>
+                  <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                  <p className="top">
+                    Ben
+                  </p>
+                </div>
+              </div>
+              <div className="news n4">
+                <div className="content">
+                  <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                  <p>
+                    <span className="top">19</span><br />
+                    Absences d'Adrien consécutives
+                  </p>
+                </div>
+              </div>
+              <div className="news n1">
+                <div className="content">
+                  <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                  <p className="top">
+                    {total} €
+                  </p>
+                  <p>
+                    Mis en jeu au total
+                  </p>
+                </div>
+              </div>
+                <div className="news n3">
+                  <div className="content">
+                    <p>
+                      Dernier gagnant
+                    </p>
+                    <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                    <p className="top">
+                      {dernierGagnantJoueur}
+                    </p>
+                  </div>
+                </div>
+                <div className="news n2">
+                  <div className="content">
+                    <p>
+                      Gagnant de 2017
+                    </p>
+                    <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                    <p className="top">
+                      Ben
+                    </p>
+                  </div>
+                </div>
+                <div className="news n4">
+                  <div className="content">
+                    <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                    <p>
+                      <span className="top">19</span><br />
+                      Absences d'Adrien consécutives
+                    </p>
+                  </div>
+                </div>
+                <div className="news n1">
+                  <div className="content">
+                    <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                    <p className="top">
+                      {total} €
+                    </p>
+                    <p>
+                      Mis en jeu au total
+                    </p>
+                  </div>
+                </div>
+                  <div className="news n3">
+                    <div className="content">
+                      <p>
+                        Dernier gagnant
+                      </p>
+                      <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                      <p className="top">
+                        {dernierGagnantJoueur}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="news n2">
+                    <div className="content">
+                      <p>
+                        Gagnant de 2017
+                      </p>
+                      <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                      <p className="top">
+                        Ben
+                      </p>
+                    </div>
+                  </div>
+                  <div className="news n4">
+                    <div className="content">
+                      <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                      <p>
+                        <span className="top">19</span><br />
+                        Absences d'Adrien consécutives
+                      </p>
+                    </div>
+                  </div>
+                  <div className="news n1">
+                    <div className="content">
+                      <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                      <p className="top">
+                        {total} €
+                      </p>
+                      <p>
+                        Mis en jeu au total
+                      </p>
+                    </div>
+                  </div>
+                    <div className="news n3">
+                      <div className="content">
+                        <p>
+                          Dernier gagnant
+                        </p>
+                        <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                        <p className="top">
+                          {dernierGagnantJoueur}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="news n2">
+                      <div className="content">
+                        <p>
+                          Gagnant de 2017
+                        </p>
+                        <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                        <p className="top">
+                          Ben
+                        </p>
+                      </div>
+                    </div>
+                    <div className="news n4">
+                      <div className="content">
+                        <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                        <p>
+                          <span className="top">19</span><br />
+                          Absences d'Adrien consécutives
+                        </p>
+                      </div>
+                    </div>
+                    <div className="news n1">
+                      <div className="content">
+                        <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                        <p className="top">
+                          {total} €
+                        </p>
+                        <p>
+                          Mis en jeu au total
+                        </p>
+                      </div>
+                    </div>
+                      <div className="news n3">
+                        <div className="content">
+                          <p>
+                            Dernier gagnant
+                          </p>
+                          <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                          <p className="top">
+                            {dernierGagnantJoueur}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="news n2">
+                        <div className="content">
+                          <p>
+                            Gagnant de 2017
+                          </p>
+                          <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                          <p className="top">
+                            Ben
+                          </p>
+                        </div>
+                      </div>
+                      <div className="news n4">
+                        <div className="content">
+                          <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                          <p>
+                            <span className="top">19</span><br />
+                            Absences d'Adrien consécutives
+                          </p>
+                        </div>
+                      </div>
+                      <div className="news n1">
+                        <div className="content">
+                          <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                          <p className="top">
+                            {total} €
+                          </p>
+                          <p>
+                            Mis en jeu au total
+                          </p>
+                        </div>
+                      </div>
+                        <div className="news n3">
+                          <div className="content">
+                            <p>
+                              Dernier gagnant
+                            </p>
+                            <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                            <p className="top">
+                              {dernierGagnantJoueur}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="news n2">
+                          <div className="content">
+                            <p>
+                              Gagnant de 2017
+                            </p>
+                            <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                            <p className="top">
+                              Ben
+                            </p>
+                          </div>
+                        </div>
+                        <div className="news n4">
+                          <div className="content">
+                            <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                            <p>
+                              <span className="top">19</span><br />
+                              Absences d'Adrien consécutives
+                            </p>
+                          </div>
+                        </div>
+                        <div className="news n1">
+                          <div className="content">
+                            <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                            <p className="top">
+                              {total} €
+                            </p>
+                            <p>
+                              Mis en jeu au total
+                            </p>
+                          </div>
+                        </div>
+                          <div className="news n3">
+                            <div className="content">
+                              <p>
+                                Dernier gagnant
+                              </p>
+                              <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                              <p className="top">
+                                {dernierGagnantJoueur}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="news n2">
+                            <div className="content">
+                              <p>
+                                Gagnant de 2017
+                              </p>
+                              <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                              <p className="top">
+                                Ben
+                              </p>
+                            </div>
+                          </div>
+                          <div className="news n4">
+                            <div className="content">
+                              <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                              <p>
+                                <span className="top">19</span><br />
+                                Absences d'Adrien consécutives
+                              </p>
+                            </div>
+                          </div>
+                          <div className="news n1">
+                            <div className="content">
+                              <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                              <p className="top">
+                                {total} €
+                              </p>
+                              <p>
+                                Mis en jeu au total
+                              </p>
+                            </div>
+                          </div>
+                            <div className="news n3">
+                              <div className="content">
+                                <p>
+                                  Dernier gagnant
+                                </p>
+                                <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                                <p className="top">
+                                  {dernierGagnantJoueur}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="news n2">
+                              <div className="content">
+                                <p>
+                                  Gagnant de 2017
+                                </p>
+                                <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                                <p className="top">
+                                  Ben
+                                </p>
+                              </div>
+                            </div>
+                            <div className="news n4">
+                              <div className="content">
+                                <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                                <p>
+                                  <span className="top">19</span><br />
+                                  Absences d'Adrien consécutives
+                                </p>
+                              </div>
+                            </div>
+                            <div className="news n1">
+                              <div className="content">
+                                <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                                <p className="top">
+                                  {total} €
+                                </p>
+                                <p>
+                                  Mis en jeu au total
+                                </p>
+                              </div>
+                            </div>
+                              <div className="news n3">
+                                <div className="content">
+                                  <p>
+                                    Dernier gagnant
+                                  </p>
+                                  <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+                                  <p className="top">
+                                    {dernierGagnantJoueur}
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="news n2">
+                                <div className="content">
+                                  <p>
+                                    Gagnant de 2017
+                                  </p>
+                                  <img src="https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif" alt="gif"/>
+                                  <p className="top">
+                                    Ben
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="news n4">
+                                <div className="content">
+                                  <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
+                                  <p>
+                                    <span className="top">19</span><br />
+                                    Absences d'Adrien consécutives
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="news n1">
+                                <div className="content">
+                                  <img src="https://media.giphy.com/media/3oFzmqENRBkRTRfLcA/giphy.gif" alt="gif"/>
+                                  <p className="top">
+                                    {total} €
+                                  </p>
+                                  <p>
+                                    Mis en jeu au total
+                                  </p>
+                                </div>
+                              </div>
         </div>
       );
     }
