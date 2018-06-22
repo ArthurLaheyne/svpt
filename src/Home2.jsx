@@ -1,66 +1,135 @@
 import React, { Component } from 'react';
-import Tile from './Tile';
-import './grid-tournoi.css';
+import './Home.css';
+import loader from './images/Blocks-0.5s-40px.gif';
+import axios from 'axios';
+import GifSearch from './GifSearch';
 
 class Home2 extends Component {
-  state = {tournois: []}
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+      giphynews: [],
+      ready: false,
+      showGifSearch: false
+    };
+  }
 
   componentDidMount() {
-    fetch('https://guarded-shelf-83545.herokuapp.com/tournois')
+    fetch(process.env.REACT_APP_API_URL + '/giphynews')
       .then(res => res.json())
-      .then(tournois => this.setState({ tournois }));
+      .then(res => {
+        this.setState({
+          giphynews: res.data,
+          ready: true
+        })
+      });
+  }
+
+  sendGif = (event) => {
+    event.preventDefault();
+    let params = {
+      text:             event.target.text.value,
+      backgroundColor:  event.target.backgroundColor.value,
+      color:            event.target.color.value,
+      gifUrl:           event.target.gifUrl.value
+    }
+    console.log(
+      params
+    );
+
+    // do something with form values, and then
+    axios.post(process.env.REACT_APP_API_URL + '/giphynew', params).then(response => {
+      console.log(response);
+      console.log(params);
+      let giphynews = this.state.giphynews;
+      giphynews.push(params);
+      this.setState({
+        giphynews: giphynews
+      })
+      // do something with response, and on response
+    }).catch(error => {
+      console.log(error);
+      // do something when request was unsuccessful
+    });
+  }
+
+  searchGif = () => {
+    this.setState({
+      showGifSearch: true
+    });
+    axios.get("https://api.giphy.com/v1/gifs/search?api_key=KhcAV0UPWqs1s8gNpeV5U2F9F7aOqsBc&q=cheeseburgers").then(response => {
+      console.log(response);
+      if (response.data.data) {
+        console.log(response.data.data);
+      } else {
+        console.log("erreur requete");
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
+  gifChosen = () => {
+    console.log("j'ai bien choisi mon gif");
+    this.setState({
+      showGifSearch: false
+    })
+  }
+
+  gifSearchClosed = () => {
+    console.log("fermeture de la recherche");
+    this.setState({
+      showGifSearch: false
+    })
   }
 
   render() {
-
-    return (
-      <div className="grid">
-      {this.state.tournois.slice(0).reverse().map((tournoi, i) => {
-        return (
-          <Tile
-            title={tournoi.id}
-            gagnant={getGagnant(tournoi)}
-            gagnantThune={getGagnantThune(tournoi)}
-            deuxieme={getDeuxieme(tournoi)}
-            deuxiemeThune={getDeuxiemeThune(tournoi)}
-            autreJoueurs={getAutreJoueurs(tournoi)}
-            key={"tournoi-" + i}
-          />
+    console.log('render');
+    if (!this.state.ready) {
+      return (
+        <div className="total-center">
+          <img src={loader} alt="loading"/>
+        </div>
+      )
+    } else if (this.state.showGifSearch) {
+      return (
+        <GifSearch cbGifChosen={this.gifChosen} cbGifSearchClosed={this.gifSearchClosed}/>
+      )
+    } else {
+      let giphynews = [];
+      this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
+        giphynews.push(
+          <div className="news" key={key}>
+            <div className="content" style={{backgroundColor: giphynew.backgroundColor}}>
+              <img src={giphynew.gifUrl} alt="gif"/>
+              <p className="top" style={{color: giphynew.color}}>
+                {giphynew.text}
+              </p>
+            </div>
+          </div>
         )
-      })}
-      </div>
-    );
+      });
+
+      return (
+        <div id="home">
+          <form
+            style={{color: "black"}}
+            method="post"
+            onSubmit={this.sendGif}
+          >
+            <input type="text" name="text"/>
+            <input type="text" name="color"/>
+            <input type="text" name="backgroundColor"/>
+            <input onFocus={this.searchGif} type="text" name="gifUrl"/>
+            <button type="submit">Envoyer</button>
+          </form>
+          {giphynews}
+        </div>
+      );
+    }
   }
 }
 
 export default Home2;
-
-
-function getGagnant(tournoi) {
-  var joueurs = tournoi.resultat.slice();
-  return joueurs[0].joueur.pseudo;
-}
-
-function getGagnantThune(tournoi) {
-  var joueurs = tournoi.resultat.slice();
-  return joueurs[0].gainBrut;
-}
-
-function getDeuxieme(tournoi) {
-  var joueurs = tournoi.resultat.slice();
-  return joueurs[1].joueur.pseudo;
-}
-
-function getDeuxiemeThune(tournoi) {
-  var joueurs = tournoi.resultat.slice();
-  return joueurs[1].gainBrut;
-}
-
-function getAutreJoueurs(tournoi) {
-  tournoi.resultat.shift();
-  tournoi.resultat.shift();
-  let autreJoueur = tournoi.resultat.map( row => {
-    return row.joueur.pseudo;
-  })
-  return autreJoueur;
-}
