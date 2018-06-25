@@ -59,22 +59,13 @@ class Home2 extends Component {
     this.setState({
       showGifSearch: true
     });
-    axios.get("https://api.giphy.com/v1/gifs/search?api_key=KhcAV0UPWqs1s8gNpeV5U2F9F7aOqsBc&q=cheeseburgers").then(response => {
-      console.log(response);
-      if (response.data.data) {
-        console.log(response.data.data);
-      } else {
-        console.log("erreur requete");
-      }
-    }).catch(error => {
-      console.log(error);
-    });
   }
 
-  gifChosen = () => {
-    console.log("j'ai bien choisi mon gif");
+  gifChosen = (url) => {
+    console.log("j'ai bien choisi mon gif", url);
     this.setState({
-      showGifSearch: false
+      showGifSearch: false,
+      gifUrl: url
     })
   }
 
@@ -86,7 +77,6 @@ class Home2 extends Component {
   }
 
   render() {
-    console.log('render');
     if (!this.state.ready) {
       return (
         <div className="total-center">
@@ -122,7 +112,7 @@ class Home2 extends Component {
             <input type="text" name="text"/>
             <input type="text" name="color"/>
             <input type="text" name="backgroundColor"/>
-            <input onFocus={this.searchGif} type="text" name="gifUrl"/>
+            <input onFocus={this.searchGif} type="text" name="gifUrl" value={this.state.gifUrl} readOnly />
             <button type="submit">Envoyer</button>
           </form>
           {giphynews}
