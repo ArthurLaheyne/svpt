@@ -1,24 +1,41 @@
 .grid-gif {
   flex: 1;
-  -webkit-column-width: 200px;
-  column-width: 200px;
+  -webkit-column-width: 150px;
+  column-width: 150px;
   -webkit-column-gap: 0;
   column-gap: 0;
+  flex-basis:250px
 }
 
 .grid-gif img {
   width: 100%;
+  padding: 2px;
+}
+
+form {
+  display: inline-block;
+  width: 100%;
+  margin-top: 3px;
 }
 
 .input-search {
-  width: calc(100% - 50px);
+  width: calc(100% - 100px);
   height: 50px;
-  background-color: black;
+  /* background-color: black; */
+  background-color: rgba(0, 0, 0, 0.2);
   border: none;
   text-align: center;
 }
 
-button.close {
+button.close, button.search {
   width: 50px;
   height: 50px;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  color: black;
+  opacity: .2;
+  font-size: 17px;
 }
