@@ -65,7 +65,7 @@ class GifSearch extends Component {
       <div>
       <form onSubmit={(event) => {this.QSubmit(event)}}>
         <button className="search"><i className="fas fa-search"></i></button>
-        <input onChange={(event) => {this.QChange(event)}} type="text" className="input-search" name="q" autoFocus/>
+        <input type="text" className="input-search" name="q" autoFocus/>
         <button type="button" onClick={this.props.cbGifSearchClosed} className="close" name="close" ><i className="fas fa-times"></i></button>
       </form>
         {this.state.loading &&

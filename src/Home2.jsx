@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './Home.css';
+import './GifNewForm.css';
 import loader from './images/Blocks-0.5s-40px.gif';
 import axios from 'axios';
 import GifSearch from './GifSearch';
+import GifNew from './GifNew';
 
 class Home2 extends Component {
 
@@ -12,7 +14,11 @@ class Home2 extends Component {
       user: null,
       giphynews: [],
       ready: false,
-      showGifSearch: false
+      showGifSearch: false,
+      gifUrl: "https://media1.giphy.com/media/YJBNjrvG5Ctmo/giphy.gif",
+      backgroundColor: "",
+      color: "",
+      text: ""
     };
   }
 
@@ -55,6 +61,24 @@ class Home2 extends Component {
     });
   }
 
+  setText = (event) => {
+    this.setState({
+      text: event.target.value
+    })
+  }
+
+  setBackgroundColor = (event) => {
+    this.setState({
+      backgroundColor: event.target.value
+    })
+  }
+
+  setColor = (event) => {
+    this.setState({
+      color: event.target.value
+    })
+  }
+
   searchGif = () => {
     this.setState({
       showGifSearch: true
@@ -91,30 +115,37 @@ class Home2 extends Component {
       let giphynews = [];
       this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
         giphynews.push(
-          <div className="news" key={key}>
-            <div className="content" style={{backgroundColor: giphynew.backgroundColor}}>
-              <img src={giphynew.gifUrl} alt="gif"/>
-              <p className="top" style={{color: giphynew.color}}>
-                {giphynew.text}
-              </p>
-            </div>
+          <div key={key}>
+            <GifNew
+              backgroundColor={giphynew.backgroundColor}
+              gifUrl={giphynew.gifUrl}
+              text={giphynew.text}
+              color={giphynew.color}
+            />
           </div>
         )
       });
 
       return (
         <div id="home">
-          <form
+          <form className="gif-new-form"
             style={{color: "black"}}
             method="post"
             onSubmit={this.sendGif}
           >
-            <input type="text" name="text"/>
-            <input type="text" name="color"/>
-            <input type="text" name="backgroundColor"/>
-            <input onFocus={this.searchGif} type="text" name="gifUrl" value={this.state.gifUrl} readOnly />
-            <button type="submit">Envoyer</button>
+            <img onClick={this.searchGif} className="gifUrl" src={this.state.gifUrl} />
+            <input className="top" onChange={(event) => {this.setText(event)}} placeholder="text" value={this.state.text} type="text" name="text"/>
+            <input onChange={(event) => {this.setColor(event)}} value={this.state.color} type="text" name="color"/>
+            <input onChange={(event) => {this.setBackgroundColor(event)}} value={this.state.backgroundColor} type="text" name="backgroundColor"/>
           </form>
+          <div>
+            <GifNew
+              backgroundColor={this.state.backgroundColor}
+              gifUrl={this.state.gifUrl}
+              text={this.state.text}
+              color={this.state.color}
+            />
+          </div>
           {giphynews}
         </div>
       );
