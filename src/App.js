@@ -7,7 +7,7 @@ import './App.css';
 import Vainqueur from './Vainqueur';
 import TournoisNew from './TournoisNew';
 import Home from './Home';
-import Home2 from './Home2';
+import PostGif from './PostGif';
 import Login from './Login';
 
 
@@ -28,18 +28,20 @@ const App = () => (
           <li className="right">
             <Login />
           </li>
-          <li className="right">
-            <p className="count-gif">2</p>
-            <img
-              src="https://media.giphy.com/media/54Ya3l8S8y1ggAlzTA/giphy-downsized.gif"
-              height="50"
-            />
-          </li>
+          {/*<LinkContainer to="/post-gif">
+            <li className="right">
+              <p className="count-gif">2</p>
+              <img
+                src="https://media.giphy.com/media/54Ya3l8S8y1ggAlzTA/giphy-downsized.gif"
+                height="50"
+              />
+            </li>
+          </LinkContainer>*/}
         </Nav>
       </Navbar>
       <div className="main">
         <Route exact path="/" component={Home} />
-        <Route path="/home2" component={Home2} />
+        <Route path="/post-gif" component={PostGif} />
         <Route path="/tournois" component={TournoisNew} />
         <Route path="/vainqueur" component={Vainqueur} />
       </div>

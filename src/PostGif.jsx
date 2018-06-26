@@ -7,7 +7,7 @@ import GifSearch from './GifSearch';
 import GifNew from './GifNew';
 import {CirclePicker} from 'react-color';
 
-class Home2 extends Component {
+class PostGif extends Component {
 
   constructor(props) {
     super(props);
@@ -42,10 +42,10 @@ class Home2 extends Component {
   sendGif = (event) => {
     event.preventDefault();
     let params = {
-      text:             event.target.text.value,
-      backgroundColor:  event.target.backgroundColor.value,
-      color:            event.target.color.value,
-      gifUrl:           event.target.gifUrl.value
+      text:             this.state.text,
+      backgroundColor:  this.state.backgroundColor,
+      color:            this.state.color,
+      gifUrl:           this.state.gifUrl
     }
     console.log(
       params
@@ -147,7 +147,7 @@ class Home2 extends Component {
     var c;
     if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
       c= hex.substring(1).split('');
-      if(c.length== 3){
+      if(c.length === 3){
         c= [c[0], c[0], c[1], c[1], c[2], c[2]];
       }
       c= '0x'+c.join('');
@@ -183,7 +183,7 @@ class Home2 extends Component {
       });
 
       return (
-        <div id="home">
+        <div id="post-gif">
           <form className="gif-new-form"
             method="post"
             onSubmit={this.sendGif}
@@ -218,20 +218,12 @@ class Home2 extends Component {
                 />
               </div>
             </div>
+            <button>Envoyer</button>
           </form>
-          <div>
-            <GifNew
-              backgroundColor={this.state.backgroundColor}
-              gifUrl={this.state.gifUrl}
-              text={this.state.text}
-              color={this.state.color}
-            />
-          </div>
-          {giphynews}
         </div>
       );
     }
   }
 }
 
-export default Home2;
+export default PostGif;

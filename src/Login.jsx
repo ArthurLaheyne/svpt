@@ -10,7 +10,7 @@ class Login extends Component {
       joueur: null,
       connecting: false,
       failed: false,
-      showMenu: false,
+      showMenu: false
     };
   }
 

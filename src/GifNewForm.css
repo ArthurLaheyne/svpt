@@ -1,9 +1,18 @@
+#post-gif {
+  max-width: 510px;
+  margin: auto;
+}
+
 .gif-new-form {
+  margin-top: 0;
   width: 100%;
+}
+
+.gif-new-form .gif-new {
   padding: 10px;
 }
 
-.gif-new-form input.top {
+.gif-new-form .top {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 45px;
@@ -12,9 +21,24 @@
   width: 100%;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  resize: none;
 }
 
 .gif-new-form .gifUrl {
   width: 100%;
   border: none;
+}
+
+.gif-new-form button {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  height: 70px;
+  background-color: black;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 26px;
 }
