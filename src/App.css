@@ -96,6 +96,18 @@
   line-height: 50px;
 }
 
+.navbar-nav li .count-gif {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  font-size: 18px;
+  height: 100%;
+  margin: 0;
+  padding-top: 13px;
+}
+
 .kep-login-facebook {
   height: 100%;
   line-height: calc(.27548vw + 12.71074px);

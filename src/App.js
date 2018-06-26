@@ -28,6 +28,13 @@ const App = () => (
           <li className="right">
             <Login />
           </li>
+          <li className="right">
+            <p className="count-gif">2</p>
+            <img
+              src="https://media.giphy.com/media/54Ya3l8S8y1ggAlzTA/giphy-downsized.gif"
+              height="50"
+            />
+          </li>
         </Nav>
       </Navbar>
       <div className="main">
