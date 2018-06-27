@@ -21,7 +21,6 @@ class Login extends Component {
   }
 
   responseFacebook = (response) => {
-    console.log('test');
     fetch(process.env.REACT_APP_API_URL + '/auth/facebook/token', {
       method: 'post',
       headers: {
@@ -39,6 +38,9 @@ class Login extends Component {
                 joueur: data.joueur,
                 connecting: false
               })
+              sessionStorage.setItem('joueur', data.joueur.pseudo);
+              sessionStorage.setItem('gifTokens', data.joueur.gifTokens);
+              this.props.cbLogin(data.joueur.gifTokens);
             }
           });
         }

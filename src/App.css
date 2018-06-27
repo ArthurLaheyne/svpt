@@ -65,6 +65,7 @@
 
 #root .nav > li {
   height: 100%;
+  cursor: pointer;
 }
 
 #root .nav > li.right {
@@ -106,6 +107,7 @@
   height: 100%;
   margin: 0;
   padding-top: 13px;
+  text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px -1px 1px black, 0px 1px 1px black
 }
 
 .kep-login-facebook {
