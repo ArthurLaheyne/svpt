@@ -9,6 +9,7 @@ import TournoisNew from './TournoisNew';
 import Home from './Home';
 import PostGif from './PostGif';
 import Login from './Login';
+import Home2 from './Home2';
 
 
 export default class App extends Component {
@@ -70,6 +71,7 @@ export default class App extends Component {
             <Route path="/post-gif" component={PostGif} />
             <Route path="/tournois" component={TournoisNew} />
             <Route path="/vainqueur" component={Vainqueur} />
+            <Route path="/home2" component={Home2} />
           </div>
         </div>
       </Router>

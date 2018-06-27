@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Home.css';
 import './GifNewForm.css';
 import loader from './images/Blocks-0.5s-40px.gif';
@@ -20,7 +22,10 @@ class PostGif extends Component {
       gifUrl: "https://media1.giphy.com/media/YJBNjrvG5Ctmo/giphy.gif",
       backgroundColor: "red",
       color: "blue",
-      text: ""
+      text: "",
+      sendingStatus: null,
+      redirect: false,
+      error: null
     };
   }
 
@@ -40,6 +45,10 @@ class PostGif extends Component {
   }
 
   sendGif = (event) => {
+    this.setState({
+      sendingStatus: "loading",
+      error: null
+    })
     event.preventDefault();
     let params = {
       facebookId:       sessionStorage.getItem('facebookId'),
@@ -56,14 +65,25 @@ class PostGif extends Component {
     axios.post(process.env.REACT_APP_API_URL + '/giphynew', params).then(response => {
       console.log(response);
       console.log(params);
-      let giphynews = this.state.giphynews;
-      giphynews.push(params);
-      this.setState({
-        giphynews: giphynews
-      })
+      setTimeout(() => {
+        this.setState({
+          sendingStatus: "success"
+        });
+        setTimeout(() => {
+          this.setState({
+            redirect: true
+          });
+        }, 500);
+      }, 500);
       // do something with response, and on response
     }).catch(error => {
       console.log(error);
+      setTimeout(() => {
+        this.setState({
+          sendingStatus: "failed",
+          error: JSON.stringify(error, Object.getOwnPropertyNames(error))
+        });
+      }, 500);
       // do something when request was unsuccessful
     });
   }
@@ -158,6 +178,9 @@ class PostGif extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/"/>
+    }
     if (!this.state.ready) {
       return (
         <div className="total-center">
@@ -182,6 +205,23 @@ class PostGif extends Component {
           </div>
         )
       });
+
+      let iconSendingStatus = null;
+      if (this.state.sendingStatus === 'loading') {
+        iconSendingStatus = <FontAwesomeIcon icon="spinner" spin />
+      } else if (this.state.sendingStatus === 'success') {
+        iconSendingStatus = <FontAwesomeIcon icon="check" color="green" />
+      } else if (this.state.sendingStatus === 'failed') {
+        iconSendingStatus = <FontAwesomeIcon icon="exclamation-triangle" color="red"/>
+      }
+
+      console.log(iconSendingStatus);
+
+      const error = this.state.error ? (
+        <pre className="error">
+          {this.state.error}
+        </pre>
+      ) : null;
 
       return (
         <div id="post-gif">
@@ -219,7 +259,8 @@ class PostGif extends Component {
                 />
               </div>
             </div>
-            <button>Envoyer</button>
+            <button>Envoyer <span className="icon">{iconSendingStatus}</span></button>
+            { error }
           </form>
         </div>
       );

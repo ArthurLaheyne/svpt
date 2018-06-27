@@ -30,6 +30,7 @@
 }
 
 .gif-new-form button {
+  position: relative;
   margin: auto;
   text-align: center;
   width: 100%;
@@ -41,4 +42,18 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 26px;
+}
+
+.gif-new-form button .icon {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+.gif-new-form .error {
+  margin-top: 20px;
+  text-align: center;
+  color: red;
 }
