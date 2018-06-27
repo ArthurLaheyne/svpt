@@ -39,6 +39,7 @@ class Login extends Component {
                 connecting: false
               })
               sessionStorage.setItem('joueur', data.joueur.pseudo);
+              sessionStorage.setItem('facebookId', data.joueur.facebookId);
               sessionStorage.setItem('gifTokens', data.joueur.gifTokens);
               this.props.cbLogin(data.joueur.gifTokens);
             }
@@ -61,6 +62,19 @@ class Login extends Component {
     this.setState({
       connecting: true
     })
+    // fetch(process.env.REACT_APP_API_URL + '/users')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     const joueurData = data.data[7];
+    //     this.setState({
+    //       joueur: joueurData,
+    //       connecting: false
+    //     })
+    //     sessionStorage.setItem('joueur', joueurData.pseudo);
+    //     sessionStorage.setItem('facebookId', joueurData.facebookId);
+    //     sessionStorage.setItem('gifTokens', joueurData.gifTokens);
+    //     this.props.cbLogin(joueurData.gifTokens);
+    //   });
   }
 
   failed = () => {

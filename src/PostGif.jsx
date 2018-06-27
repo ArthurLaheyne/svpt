@@ -42,6 +42,7 @@ class PostGif extends Component {
   sendGif = (event) => {
     event.preventDefault();
     let params = {
+      facebookId:       sessionStorage.getItem('facebookId'),
       text:             this.state.text,
       backgroundColor:  this.state.backgroundColor,
       color:            this.state.color,
