@@ -3,10 +3,72 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import './vainqueur.css';
 import AvatarMini from './AvatarMini';
+import axios from 'axios';
 
 export default class Vainqueur2 extends Component {
 
+  addToken = (pseudo) => {
+    let params = {
+      quantite: 1,
+      pseudo: pseudo
+    }
+    axios.post(process.env.REACT_APP_API_URL + '/giphynew/addTokens', params).then(response => {
+      console.log(response);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
   render() {
+
+    const columns = [{
+      id: 'Joueur',
+      Header: 'Joueur',
+      accessor: d => d.joueur,
+      Cell: row => (
+        <div>
+          <AvatarMini joueur={row.value} width="30" height="30"/> {row.value}
+        </div>
+      )
+    }, {
+      Header: 'Gain brut',
+      accessor: 'gainBrut',
+      sortMethod: inverseSort
+    },{
+      Header: 'Gain net',
+      accessor: 'gainNet',
+      sortMethod: inverseSort
+    },{
+      Header: 'Victoires',
+      accessor: 'nbrGagnees',
+      sortMethod: inverseSort
+    },{
+      Header: 'Tournois',
+      accessor: 'nbrJouees',
+      sortMethod: inverseSort
+    },{
+      id: 'roi',
+      Header: 'ROI',
+      accessor: joueur => Math.round(joueur.roi),
+      sortMethod: inverseSort
+    },{
+      Header: 'Buy-in',
+      accessor: 'buyIn',
+      sortMethod: inverseSort
+    }];
+    if(this.props.joueurConnecte === "arthur") {
+      columns.push({
+        id: 'Tokens',
+        Header: 'Tokens',
+        accessor: d => d.joueur,
+        Cell: row => (
+          <div>
+            <button onClick={() => this.addToken(row.value)}>+1</button>
+          </div>
+        )
+      });
+    }
+
     const data = [];
     this.props.tournois.forEach( (tournoi) => {
       tournoi.premier = getPremier(tournoi);
@@ -61,42 +123,6 @@ export default class Vainqueur2 extends Component {
   }
 
 }
-
-const columns = [{
-  id: 'Joueur',
-  Header: 'Joueur',
-  accessor: d => d.joueur,
-  Cell: row => (
-    <div>
-      <AvatarMini joueur={row.value} width="30" height="30"/> {row.value}
-    </div>
-  )
-}, {
-  id: 'roi',
-  Header: 'ROI',
-  accessor: joueur => Math.round(joueur.roi),
-  sortMethod: inverseSort
-},{
-  Header: 'Gain net',
-  accessor: 'gainNet',
-  sortMethod: inverseSort
-},{
-  Header: 'Victoires',
-  accessor: 'nbrGagnees',
-  sortMethod: inverseSort
-},{
-  Header: 'Tournois',
-  accessor: 'nbrJouees',
-  sortMethod: inverseSort
-},{
-  Header: 'Gain brut',
-  accessor: 'gainBrut',
-  sortMethod: inverseSort
-},{
-  Header: 'Buy-in',
-  accessor: 'buyIn',
-  sortMethod: inverseSort
-}];
 
 
 function getPremier(tournoi) {

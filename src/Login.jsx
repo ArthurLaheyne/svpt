@@ -99,6 +99,7 @@ class Login extends Component {
           <div id="account-menu" style={{ display: this.state.showMenu ? "block" : "none"}}>
             <ul>
               <li onClick={this.logout}>Déconnexion</li>
+              {/* <li><Link to="/admin">Admin</Link></li> */}
             </ul>
           </div>
         </div>

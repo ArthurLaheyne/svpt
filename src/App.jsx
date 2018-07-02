@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+
 import './App.css';
 
 import Vainqueur from './Vainqueur';
@@ -10,6 +11,7 @@ import Home from './Home';
 import PostGif from './PostGif';
 import Login from './Login';
 import Home2 from './Home2';
+import Admin from './Admin';
 
 
 export default class App extends Component {
@@ -70,8 +72,11 @@ export default class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/post-gif" component={PostGif} />
             <Route path="/tournois" component={TournoisNew} />
-            <Route path="/vainqueur" component={Vainqueur} />
+            <Route path='/vainqueur' render={() => (
+              <Vainqueur joueurConnecte="max" />
+            )}/>
             <Route path="/home2" component={Home2} />
+            <Route path="/admin" component={Admin} />
           </div>
         </div>
       </Router>
