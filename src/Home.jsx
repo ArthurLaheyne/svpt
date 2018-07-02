@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import GifNew from './GifNew';
 import loader from './images/Blocks-0.5s-40px.gif';
 
 class Home extends Component {
@@ -9,6 +10,7 @@ class Home extends Component {
     this.state = {
       user: null,
       tournois: [],
+      giphynews: [],
       ready: false
     };
   }
@@ -21,6 +23,13 @@ class Home extends Component {
           user: res.user,
           tournois: res.data,
           ready: true
+        })
+      });
+    fetch(process.env.REACT_APP_API_URL + '/giphynews')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          giphynews: res.data
         })
       });
   }
@@ -43,9 +52,23 @@ class Home extends Component {
       const dernierTournoi = tournois[tournois.length - 1];
       const dernierGagnant = dernierTournoi.resultat[0];
       const dernierGagnantJoueur = dernierGagnant.joueur.pseudo;
+      let giphynews = [];
+      this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
+        giphynews.push(
+          <div key={key}>
+            <GifNew
+              backgroundColor={giphynew.backgroundColor}
+              gifUrl={giphynew.gifUrl}
+              text={giphynew.text}
+              color={giphynew.color}
+            />
+          </div>
+        )
+      });
 
       return (
         <div id="home">
+          {giphynews}
           <div className="news n3">
             <div className="content">
               <p>
