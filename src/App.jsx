@@ -34,7 +34,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.gifTokens);
     const PostGifLink = this.state.gifTokens > 0 ? (
       <LinkContainer to="/post-gif">
         <li className="right">
@@ -42,6 +41,7 @@ export default class App extends Component {
           <img
             src="https://media.giphy.com/media/54Ya3l8S8y1ggAlzTA/giphy-downsized.gif"
             height="50"
+            alt="giphy"
           />
         </li>
       </LinkContainer>
