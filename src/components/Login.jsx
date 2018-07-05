@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import AvatarMini from './AvatarMini';
+import { inject } from "mobx-react";
 
-class Login extends Component {
+const Login = inject("store")(class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -12,12 +13,6 @@ class Login extends Component {
       failed: false,
       showMenu: false
     };
-  }
-
-  componentDidMount() {
-    // this.setState({
-    //   connecting: true
-    // });
   }
 
   responseFacebook = (response) => {
@@ -41,7 +36,9 @@ class Login extends Component {
               sessionStorage.setItem('joueur', data.joueur.pseudo);
               sessionStorage.setItem('facebookId', data.joueur.facebookId);
               sessionStorage.setItem('gifTokens', data.joueur.gifTokens);
-              this.props.cbLogin(data.joueur.gifTokens);
+              this.props.store.setGifToken(data.joueur.gifTokens);
+              this.props.store.setPseudo(data.joueur.pseudo);
+              this.props.store.setFacebookId(data.joueur.facebookId);
             }
           });
         }
@@ -73,7 +70,9 @@ class Login extends Component {
         sessionStorage.setItem('joueur', joueurData.pseudo);
         sessionStorage.setItem('facebookId', joueurData.facebookId);
         sessionStorage.setItem('gifTokens', joueurData.gifTokens);
-        this.props.cbLogin(joueurData.gifTokens);
+        this.props.store.setGifToken(joueurData.gifTokens);
+        this.props.store.setPseudo(joueurData.pseudo);
+        this.props.store.setFacebookId(joueurData.facebookId);
       });
   }
 
@@ -125,6 +124,6 @@ class Login extends Component {
       </div>
     );
   }
-}
+})
 
 export default Login;

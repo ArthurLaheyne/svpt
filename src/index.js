@@ -1,10 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "react-dom";
 import { unregister } from './registerServiceWorker';
 import App from './components/App';
+import JoueurModel from "./models/JoueurModel";
+import DevTools from "mobx-react-devtools";
+import { Provider } from "mobx-react";
 
 import './index.css';
 import './components/table.css';
+
+const store = new JoueurModel();
+
 unregister();
-ReactDOM.render(<App />, document.getElementById('root'));
+render(
+  <div>
+    <DevTools />
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </div>,
+  document.getElementById('root')
+);
+
 unregister();
