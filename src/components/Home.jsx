@@ -68,18 +68,18 @@ class Home extends Component {
 
       return (
         <div id="home">
-          {giphynews}
           <div className="news n3">
             <div className="content">
               <p>
                 Dernier gagnant
               </p>
-              <img src="https://media.giphy.com/media/aCKMaeduKfFXG/giphy.gif" alt="gif"/>
+              <img src="https://i.giphy.com/media/tQcjerc5JJGxi/giphy.webp" alt="gif"/>
               <p className="top">
                 {dernierGagnantJoueur}
               </p>
             </div>
           </div>
+          {giphynews}
           <div className="news n2">
             <div className="content">
               <p>
@@ -95,7 +95,7 @@ class Home extends Component {
             <div className="content">
               <img src="https://media.giphy.com/media/99S1Zo5Z0gByg/giphy.gif" alt="gif"/>
               <p>
-                <span className="top">19</span><br />
+                <span className="top">21</span><br />
                 Absences d'Adrien consécutives
               </p>
             </div>
