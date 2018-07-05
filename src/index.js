@@ -14,7 +14,6 @@ const store = new JoueurModel();
 unregister();
 render(
   <div>
-    <DevTools />
     <Provider store={store}>
       <App />
     </Provider>

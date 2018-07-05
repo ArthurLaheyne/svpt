@@ -8,7 +8,7 @@ const MenuGifTokens = inject("store")(observer(class MenuGifTokens extends Compo
     const gifTokens = this.props.store.gifTokens;
     const PostGifLink = gifTokens > 0 ? (
       <LinkContainer to="/post-gif">
-        <li className="right">
+        <li className="right" style={{width: '50px'}}>
           <p className="count-gif">{gifTokens}</p>
           <img
             src="https://media.giphy.com/media/54Ya3l8S8y1ggAlzTA/giphy-downsized.gif"
