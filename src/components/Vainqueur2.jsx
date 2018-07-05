@@ -4,8 +4,9 @@ import 'react-table/react-table.css';
 import './vainqueur.css';
 import AvatarMini from './AvatarMini';
 import axios from 'axios';
+import { observer, inject } from "mobx-react";
 
-export default class Vainqueur2 extends Component {
+const Vainqueur2 = inject("store")(observer(class Vainqueur2 extends Component {
 
   addToken = (pseudo) => {
     let params = {
@@ -20,7 +21,6 @@ export default class Vainqueur2 extends Component {
   }
 
   render() {
-
     const columns = [{
       id: 'Joueur',
       Header: 'Joueur',
@@ -56,7 +56,7 @@ export default class Vainqueur2 extends Component {
       accessor: 'buyIn',
       sortMethod: inverseSort
     }];
-    if(this.props.joueurConnecte === "arthur") {
+    if(this.props.store.pseudo === "arthur") {
       columns.push({
         id: 'Tokens',
         Header: 'Tokens',
@@ -122,7 +122,9 @@ export default class Vainqueur2 extends Component {
     )
   }
 
-}
+}))
+
+export default Vainqueur2;
 
 
 function getPremier(tournoi) {

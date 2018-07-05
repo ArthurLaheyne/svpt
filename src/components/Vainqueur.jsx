@@ -25,7 +25,7 @@ export default class Vainqueur extends Component {
 
   render() {
     return this.state.ready ? (
-      <Vainqueur2 tournois={this.state.tournois} joueurConnecte={this.props.joueurConnecte}/>
+      <Vainqueur2 tournois={this.state.tournois} />
     ) : (
       <div className="total-center">
         <img src={loader} alt="loading" />
