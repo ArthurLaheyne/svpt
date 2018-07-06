@@ -32,12 +32,7 @@ const Login = inject("store")(class Login extends Component {
                 joueur: data.joueur,
                 connecting: false
               })
-              sessionStorage.setItem('joueur', data.joueur.pseudo);
-              sessionStorage.setItem('facebookId', data.joueur.facebookId);
-              sessionStorage.setItem('gifTokens', data.joueur.gifTokens);
-              this.props.store.setGifToken(data.joueur.gifTokens);
-              this.props.store.setPseudo(data.joueur.pseudo);
-              this.props.store.setFacebookId(data.joueur.facebookId);
+              this.props.store.setJoueur(data.joueur);
             }
           });
         }
