@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from "react-dom";
 import { unregister } from './registerServiceWorker';
-import App from './components/App';
+import App from './App';
 import JoueurModel from "./models/JoueurModel";
 import DevTools from "mobx-react-devtools";
 import { Provider } from "mobx-react";

@@ -1,5 +1,5 @@
 import React from 'react';
-import images from './mock.js';
+import images from '../mock.js';
 
 
 export default function AvatarCrowned(props) {

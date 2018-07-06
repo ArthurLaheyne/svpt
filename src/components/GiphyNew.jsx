@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class GifNew extends Component {
+class GiphyNew extends Component {
 
   constructor(props) {
     super(props);
@@ -24,4 +24,4 @@ class GifNew extends Component {
   }
 }
 
-export default GifNew;
+export default GiphyNew;

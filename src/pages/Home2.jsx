@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './Home.css';
-import './GifNewForm.css';
-import loader from './images/Blocks-0.5s-40px.gif';
 import axios from 'axios';
-import GifSearch from './GifSearch';
-import GifNew from './GifNew';
+
+import GifSearch from '../components/GifSearch';
+import GiphyNew from '../components/GiphyNew';
+
+import './Home.css';
+import './GiphyNewPost.css';
+import loader from '../images/Blocks-0.5s-40px.gif';
 import {CirclePicker} from 'react-color';
 
 class Home2 extends Component {
@@ -172,7 +174,7 @@ class Home2 extends Component {
       this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
         giphynews.push(
           <div key={key}>
-            <GifNew
+            <GiphyNew
               backgroundColor={giphynew.backgroundColor}
               gifUrl={giphynew.gifUrl}
               text={giphynew.text}
@@ -220,7 +222,7 @@ class Home2 extends Component {
             </div>
           </form>
           <div>
-            <GifNew
+            <GiphyNew
               backgroundColor={this.state.backgroundColor}
               gifUrl={this.state.gifUrl}
               text={this.state.text}

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import Vainqueur2 from './Vainqueur2';
-import loader from './images/Blocks-0.5s-40px.gif';
+import { observer, inject } from "mobx-react";
 
-export default class Vainqueur extends Component {
+import Vainqueur2 from '../components/Vainqueur2';
+
+import loader from '../images/Blocks-0.5s-40px.gif';
+
+const Vainqueur = inject("store")(observer(class Vainqueur extends Component {
 
   constructor(props) {
     super(props);
@@ -13,6 +16,7 @@ export default class Vainqueur extends Component {
   }
 
   componentDidMount() {
+    this.props.store.refreshJoueur();
     fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(data => {
@@ -33,4 +37,6 @@ export default class Vainqueur extends Component {
     )
   }
 
-}
+}))
+
+export default Vainqueur;

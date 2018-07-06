@@ -8,7 +8,6 @@ const Login = inject("store")(class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      joueur: null,
       connecting: false,
       failed: false,
       showMenu: false
@@ -49,10 +48,7 @@ const Login = inject("store")(class Login extends Component {
   }
 
   logout = () => {
-    console.log('deco');
-    this.setState({
-      joueur: null
-    })
+    this.props.store.setJoueur(null);
   }
 
   login = () => {
@@ -67,14 +63,14 @@ const Login = inject("store")(class Login extends Component {
     //       joueur: joueurData,
     //       connecting: false
     //     })
-    //     sessionStorage.setItem('joueur', joueurData.pseudo);
-    //     sessionStorage.setItem('facebookId', joueurData.facebookId);
-    //     sessionStorage.setItem('gifTokens', joueurData.gifTokens);
-    //     this.props.store.setGifToken(joueurData.gifTokens);
-    //     this.props.store.setPseudo(joueurData.pseudo);
-    //     this.props.store.setFacebookId(joueurData.facebookId);
+    //     // sessionStorage.setItem('joueur', joueurData.pseudo);
+    //     this.props.store.setJoueur({
+    //       pseudo: "arthur",
+    //       facebookId: "10216858591964151",
+    //       gifTokens: 3
+    //     });
     //   });
-    console.log('fonction à supprimer');
+    // console.log('fonction à supprimer');
   }
 
   failed = () => {
@@ -92,10 +88,10 @@ const Login = inject("store")(class Login extends Component {
   }
 
   render() {
-    if (this.state.joueur) {
+    if (this.props.store.joueur) {
       return (
         <div className="facebook" onClick={this.toggleMenu}>
-          <AvatarMini joueur={this.state.joueur.pseudo} width="30" height="30"/> <span >{this.state.joueur.pseudo} </span>
+          <AvatarMini joueur={this.props.store.joueur.pseudo} width="30" height="30"/> <span >{this.props.store.joueur.pseudo} </span>
           <div id="account-menu" style={{ display: this.state.showMenu ? "block" : "none"}}>
             <ul>
               <li onClick={this.logout}>Déconnexion</li>

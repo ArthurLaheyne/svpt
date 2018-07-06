@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './GifSearch.css';
-import loader from './images/Blocks-0.5s-40px.gif';
+import loader from '../images/Blocks-0.5s-40px.gif';
 // import GphApiClient from 'giphy-js-sdk-core';
 
 class GifSearch extends Component {

@@ -1,33 +1,48 @@
 import { observable, computed, action, decorate } from "mobx";
+import axios from 'axios';
 
 export default class Joueur {
-    pseudo = "John"
+    pseudo = null
     gifTokens = 0
+    joueur = null
 
     get pseudoComputed() {
-        return this.pseudo + "-computed";
+      return this.joueur.pseudo + "-computed";
     }
 
     addGifToken() {
-        this.gifTokens++;
+      if (this.joueur) {
+        this.joueur.gifTokens = this.joueur.gifTokens ? this.joueur.gifTokens + 1 : 1;
+      }
     }
 
-    setGifToken(gifTokens) {
-        this.gifTokens = gifTokens;
+    setJoueur(joueur) {
+      this.joueur = joueur;
     }
 
-    setPseudo(pseudo) {
-        this.pseudo = pseudo;
+    issetJoueur() {
+      return this.joueur && this.joueur.facebookId;
     }
 
-    setFacebookId(facebookId) {
-        this.facebookId = facebookId;
+    refreshJoueur() {
+      let self = this;
+      if (this.issetJoueur()) {
+        axios.post(process.env.REACT_APP_API_URL + '/user', {
+          facebookId: this.joueur.facebookId
+        })
+        .then(function (response) {
+          self.setJoueur(response.data.joueur);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
     }
 }
 // when using decorate, all fields should be specified (a class might have many more non-observable internal fields after all)
 decorate(Joueur, {
-    pseudo: observable,
-    gifTokens: observable,
+    joueur: observable,
     pseudoComputed: computed,
-    addGifToken: action
+    addGifToken: action,
+    refreshJoueur: action
 })

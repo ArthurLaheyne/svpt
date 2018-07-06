@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import Tile from './Tile';
-import './grid-tournoi.css';
-import loader from './images/Blocks-0.5s-40px.gif';
+import { observer, inject } from "mobx-react";
 
-class TournoisNew extends Component {
+import Tile from '../components/Tile';
+
+import './grid-tournoi.css';
+import loader from '../images/Blocks-0.5s-40px.gif';
+
+const TournoisNew = inject("store")(observer(class TournoisNew extends Component {
 
   constructor(props) {
     super(props);
@@ -14,6 +17,7 @@ class TournoisNew extends Component {
   }
 
   componentDidMount() {
+    this.props.store.refreshJoueur();
     fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(data => {
@@ -51,7 +55,8 @@ class TournoisNew extends Component {
       )
     }
   }
-}
+
+}))
 
 export default TournoisNew;
 

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
-import 'react-table/react-table.css';
-import './vainqueur.css';
-import AvatarMini from './AvatarMini';
 import axios from 'axios';
 import { observer, inject } from "mobx-react";
+
+import AvatarMini from './AvatarMini';
+
+import 'react-table/react-table.css';
+import './vainqueur.css';
 
 const Vainqueur2 = inject("store")(observer(class Vainqueur2 extends Component {
 

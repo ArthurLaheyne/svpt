@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import './Home.css';
-import GifNew from './GifNew';
-import loader from './images/Blocks-0.5s-40px.gif';
+import { observer, inject } from "mobx-react";
 
-class Home extends Component {
+import GiphyNew from '../components/GiphyNew';
+
+import './Home.css';
+import loader from '../images/Blocks-0.5s-40px.gif';
+
+const Home = inject("store")(observer(class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -16,6 +19,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    this.props.store.refreshJoueur();
     fetch(process.env.REACT_APP_API_URL + '/tournois')
       .then(res => res.json())
       .then(res => {
@@ -56,7 +60,7 @@ class Home extends Component {
       this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
         giphynews.push(
           <div key={key}>
-            <GifNew
+            <GiphyNew
               backgroundColor={giphynew.backgroundColor}
               gifUrl={giphynew.gifUrl}
               text={giphynew.text}
@@ -535,6 +539,6 @@ class Home extends Component {
       );
     }
   }
-}
+}))
 
 export default Home;

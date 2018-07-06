@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './Home.css';
-import './GifNewForm.css';
-import loader from './images/Blocks-0.5s-40px.gif';
 import axios from 'axios';
-import GifSearch from './GifSearch';
-import GifNew from './GifNew';
-import {CirclePicker} from 'react-color';
+import { observer, inject } from "mobx-react";
 
-class PostGif extends Component {
+import GifSearch from '../components/GifSearch';
+import GiphyNew from '../components/GiphyNew';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {CirclePicker} from 'react-color';
+import loader from '../images/Blocks-0.5s-40px.gif';
+import './Home.css';
+import './GiphyNewPost.css';
+
+const GiphyNewPost = inject("store")(observer(class GiphyNewPost extends Component {
 
   constructor(props) {
     super(props);
+    this.props.store.refreshJoueur();
     this.textarea = React.createRef();
     this.state = {
       user: null,
@@ -196,7 +200,7 @@ class PostGif extends Component {
       this.state.giphynews.slice(0).reverse().forEach((giphynew, key) => {
         giphynews.push(
           <div key={key}>
-            <GifNew
+            <GiphyNew
               backgroundColor={giphynew.backgroundColor}
               gifUrl={giphynew.gifUrl}
               text={giphynew.text}
@@ -249,7 +253,7 @@ class PostGif extends Component {
               >
               </textarea>
             </p>
-            <div style={{padding: "10px"}}>
+            <div style={{padding: "10px", marginRight: "10px"}}>
               <div style={{marginBottom: "10px"}}>
                 <CirclePicker
                   colors={['#ee0000', '#ee0077', '#ea00ee', '#7700ee', '#0000ee', '#0077ee', '#00eeee', '#00ee77', '#00ee00', '#77ee00', '#eeee00', '#ee7700']}
@@ -266,6 +270,7 @@ class PostGif extends Component {
       );
     }
   }
-}
 
-export default PostGif;
+}))
+
+export default GiphyNewPost;
