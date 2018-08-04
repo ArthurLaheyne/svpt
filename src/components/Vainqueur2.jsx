@@ -6,7 +6,7 @@ import { observer, inject } from "mobx-react";
 import AvatarMini from './AvatarMini';
 
 import 'react-table/react-table.css';
-import './vainqueur.css';
+import '../css/vainqueur.css';
 
 const Vainqueur2 = inject("store")(observer(class Vainqueur2 extends Component {
 

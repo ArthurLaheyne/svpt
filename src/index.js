@@ -6,8 +6,8 @@ import JoueurModel from "./models/JoueurModel";
 import DevTools from "mobx-react-devtools";
 import { Provider } from "mobx-react";
 
-import './index.css';
-import './components/table.css';
+import './css/index.css';
+import './css/table.css';
 
 const store = new JoueurModel();
 

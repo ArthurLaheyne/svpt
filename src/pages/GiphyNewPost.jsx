@@ -9,8 +9,8 @@ import GiphyNew from '../components/GiphyNew';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {CirclePicker} from 'react-color';
 import loader from '../images/Blocks-0.5s-40px.gif';
-import './Home.css';
-import './GiphyNewPost.css';
+import '../css/Home.css';
+import '../css/GiphyNewPost.css';
 
 const GiphyNewPost = inject("store")(observer(class GiphyNewPost extends Component {
 

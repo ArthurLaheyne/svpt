@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Menu from './components/Menu';
 import Routing from './Routing';
 
-import './App.css';
+import './css/App.css';
 
 const App = () => (
   <BrowserRouter>

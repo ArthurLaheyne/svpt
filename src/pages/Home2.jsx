@@ -4,8 +4,8 @@ import axios from 'axios';
 import GifSearch from '../components/GifSearch';
 import GiphyNew from '../components/GiphyNew';
 
-import './Home.css';
-import './GiphyNewPost.css';
+import '../css/Home.css';
+import '../css/GiphyNewPost.css';
 import loader from '../images/Blocks-0.5s-40px.gif';
 import {CirclePicker} from 'react-color';
 

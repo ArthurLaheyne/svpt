@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import images from '../mock.js';
+import images from '../images/avatars/mock.js';
 
 
 export default function Avatar(props) {

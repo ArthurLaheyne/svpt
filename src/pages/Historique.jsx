@@ -3,10 +3,10 @@ import { observer, inject } from "mobx-react";
 
 import Tile from '../components/Tile';
 
-import './grid-tournoi.css';
+import '../css/grid-tournoi.css';
 import loader from '../images/Blocks-0.5s-40px.gif';
 
-const TournoisNew = inject("store")(observer(class TournoisNew extends Component {
+const Historique = inject("store")(observer(class Historique extends Component {
 
   constructor(props) {
     super(props);
@@ -58,7 +58,7 @@ const TournoisNew = inject("store")(observer(class TournoisNew extends Component
 
 }))
 
-export default TournoisNew;
+export default Historique;
 
 
 function getGagnantThune(tournoi) {

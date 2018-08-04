@@ -3,7 +3,7 @@ import { observer, inject } from "mobx-react";
 
 import GiphyNew from '../components/GiphyNew';
 
-import './Home.css';
+import '../css/Home.css';
 import loader from '../images/Blocks-0.5s-40px.gif';
 
 const Home = inject("store")(observer(class Home extends Component {

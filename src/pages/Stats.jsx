@@ -5,7 +5,7 @@ import Vainqueur2 from '../components/Vainqueur2';
 
 import loader from '../images/Blocks-0.5s-40px.gif';
 
-const Vainqueur = inject("store")(observer(class Vainqueur extends Component {
+const Stats = inject("store")(observer(class Vainqueur extends Component {
 
   constructor(props) {
     super(props);
@@ -39,4 +39,4 @@ const Vainqueur = inject("store")(observer(class Vainqueur extends Component {
 
 }))
 
-export default Vainqueur;
+export default Stats;

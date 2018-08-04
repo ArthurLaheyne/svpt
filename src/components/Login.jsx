@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
-import AvatarMini from './AvatarMini';
 import { inject } from "mobx-react";
+
+import AvatarMini from './AvatarMini';
 
 const Login = inject("store")(class Login extends Component {
 

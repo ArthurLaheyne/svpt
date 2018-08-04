@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import AvatarMini from './AvatarMini';
 import AvatarCrowned from './AvatarCrowned';
 
