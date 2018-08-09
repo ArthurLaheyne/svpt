@@ -54,12 +54,15 @@ const GiphyNewPost = inject("store")(observer(class GiphyNewPost extends Compone
       error: null
     })
     event.preventDefault();
+    // let params = {
+    //   facebookId:       sessionStorage.getItem('facebookId'),
+    //   text:             this.state.text,
+    //   backgroundColor:  this.state.backgroundColor,
+    //   color:            this.state.color,
+    //   gifUrl:           this.state.gifUrl
+    // }
     let params = {
-      facebookId:       sessionStorage.getItem('facebookId'),
-      text:             this.state.text,
-      backgroundColor:  this.state.backgroundColor,
-      color:            this.state.color,
-      gifUrl:           this.state.gifUrl
+      html: '<div class="news" style="background-color: ' + this.state.backgroundColor + '"><div class="content"><img src="' + this.state.gifUrl + '" alt="gif"><p class="top" style="color:' + this.state.color + '">' + this.state.text + '</p></div></div>'
     }
     console.log(
       params

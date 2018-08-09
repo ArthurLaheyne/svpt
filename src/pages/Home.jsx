@@ -39,8 +39,13 @@ const Home = inject("store")(observer(class Home extends Component {
     } else {
       let giphynews = [];
       this.state.giphynews.forEach((giphynew, key) => {
+        console.log(giphynew);
         let element = (
-          <div key={key}><div dangerouslySetInnerHTML={{__html: giphynew.body}}></div></div>
+          <div key={key} className="bnew">
+            <div dangerouslySetInnerHTML={{__html: giphynew.body}}>
+            </div>
+            <p className="author">{giphynew.author + ' ' + (new Date(giphynew.publishedAt)).toLocaleDateString()}</p>
+          </div>
         );
         giphynews.push(element);
       });
