@@ -29,7 +29,7 @@
   border: none;
 }
 
-.gif-new-form button {
+.gif-new-form input[type=submit] {
   position: relative;
   margin: auto;
   text-align: center;
