@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from "mobx-react";
 
 import Vainqueur2 from '../components/Vainqueur2';
+import Nivo from '../components/Nivo';
 
 import loader from '../images/Blocks-0.5s-40px.gif';
 
@@ -29,7 +30,10 @@ const Stats = inject("store")(observer(class Vainqueur extends Component {
 
   render() {
     return this.state.ready ? (
-      <Vainqueur2 tournois={this.state.tournois} />
+      <div>
+        <Vainqueur2 tournois={this.state.tournois} />
+        <Nivo tournois={this.state.tournois} />
+      </div>
     ) : (
       <div className="total-center">
         <img src={loader} alt="loading" />
