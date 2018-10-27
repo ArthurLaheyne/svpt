@@ -104,7 +104,7 @@ class Nivo extends Component {
                 "legendOffset": -40,
                 "legendPosition": "center"
             }}
-            curve="basis"
+            curve="stepAfter"
             lineWidth={4}
             dotSize={10}
             dotColor="inherit:darker(0.3)"
@@ -186,7 +186,7 @@ class Nivo extends Component {
                 "legendOffset": -40,
                 "legendPosition": "center"
             }}
-            curve="basis"
+            curve="stepAfter"
             lineWidth={4}
             dotSize={10}
             dotColor="inherit:darker(0.3)"
