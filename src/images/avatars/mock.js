@@ -39,5 +39,9 @@ export default {
   'yann-mini': require('./halow-mini/Bat-01.png'),
   'aline': require('./halow-100/Oompa Loompa-01.png'),
   'aline-mini': require('./halow-mini/Oompa Loompa-01.png'),
-  'crown-100': require('./crown-100.png'),
+  'leo': require('./halow-100/Mike-01.png'),
+  'leo-mini': require('./halow-mini/Mike-01.png'),
+  'yoana': require('./halow-100/Devil-01.png'),
+  'yoana-mini': require('./halow-mini/Devil-01.png'),
+  'crown-100': require('./crown-100.png')
 }
