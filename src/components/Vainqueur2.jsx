@@ -103,6 +103,7 @@ const Vainqueur2 = inject("store")(observer(class Vainqueur2 extends Component {
 
     // Données calculées
     data.forEach( (joueur) => {
+        console.log(joueur);
       joueur.roi = (100/joueur.buyIn) * joueur.gainNet;
     });
 
@@ -114,6 +115,7 @@ const Vainqueur2 = inject("store")(observer(class Vainqueur2 extends Component {
             resizable={false}
             minRows="0"
             showPagination={false}
+            defaultPageSize={50}
             defaultSorted={[
               {
                 id: "gainBrut"

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ResponsiveLine } from '@nivo/line'
+import { ResponsiveBar } from '@nivo/bar'
 
 class Nivo extends Component {
 
@@ -25,6 +26,7 @@ class Nivo extends Component {
       let gainBrutTotal= 0;
       let buyInTotal= 0;
       let i = 0;
+      let tournois_joues = 0;
       this.props.tournois.forEach( tournoi => {
         i++;
         tournoi.resultat.forEach( resultat => {
@@ -32,6 +34,7 @@ class Nivo extends Component {
           if(resultat.joueur == joueur) {
             gainBrutTotal += resultat.gainBrut;
             buyInTotal += resultat.buyIn;
+            tournois_joues ++;
             let gainNetTotal = gainBrutTotal - buyInTotal;
             let roi = Math.floor(gainNetTotal / buyInTotal * 100);
             data_joueur_gain.push({
@@ -40,7 +43,8 @@ class Nivo extends Component {
             })
             data_joueur_roi.push({
               "x": i,
-              "y": roi
+              "y": roi,
+              "tournois_joues": tournois_joues
             })
           }
         });
@@ -56,10 +60,24 @@ class Nivo extends Component {
         "data": data_joueur_roi
       });
     });
+    let data_roi_bar = data_roi.filter( joueur => {
+      return joueur.data[joueur.data.length - 1].tournois_joues > 9;
+    }).map( joueur => {
+      let dernier_roi = joueur.data[joueur.data.length - 1].y;
+      let tournois_joues = joueur.data[joueur.data.length - 1].tournois_joues;
+      let pseudo = joueur.id;
+      return {'pseudo': pseudo, 'roi': dernier_roi, 'tournois_joues': tournois_joues};
+    })
+    data_roi_bar.sort((joueur1, joueur2) => {
+      return joueur1.roi < joueur2.roi;
+    });
+    console.log(data_roi_bar);
     this.state = {
       data_gain: data_gain,
       data_roi: data_roi,
+      data_roi_bar: data_roi_bar,
     };
+    console.log(data_roi_bar);
   }
 
   render() {
@@ -226,6 +244,106 @@ class Nivo extends Component {
                         }
                     ]
                 }
+            ]}
+          />
+        </div>
+        <div style={{width: '1000px', height: '600px'}}>
+          <ResponsiveBar
+            data={this.state.data_roi_bar}
+            keys={[
+            "roi"
+            ]}
+            indexBy="pseudo"
+            margin={{
+                "top": 50,
+                "right": 130,
+                "bottom": 50,
+                "left": 60
+            }}
+            padding={0.3}
+            groupMode="grouped"
+            colors="category10"
+            colorBy="index"
+            defs={[
+                {
+                    "id": "dots",
+                    "type": "patternDots",
+                    "background": "inherit",
+                    "color": "#38bcb2",
+                    "size": 4,
+                    "padding": 1,
+                    "stagger": true
+                },
+                {
+                    "id": "lines",
+                    "type": "patternLines",
+                    "background": "inherit",
+                    "color": "#eed312",
+                    "rotation": -45,
+                    "lineWidth": 6,
+                    "spacing": 10
+                }
+            ]}
+            fill={[
+                {
+                    "match": {
+                        "id": "fries"
+                    },
+                    "id": "dots"
+                },
+                {
+                    "match": {
+                        "id": "sandwich"
+                    },
+                    "id": "lines"
+                }
+            ]}
+            borderColor="inherit:darker(1.6)"
+            axisBottom={{
+                "tickSize": 5,
+                "tickPadding": 5,
+                "tickRotation": 0,
+                "legend": "pseudo",
+                "legendPosition": "middle",
+                "legendOffset": 32
+            }}
+            axisLeft={{
+                "tickSize": 5,
+                "tickPadding": 5,
+                "tickRotation": 0,
+                "legend": "ROI",
+                "legendPosition": "middle",
+                "legendOffset": -40
+            }}
+            labelSkipWidth={12}
+            labelSkipHeight={12}
+            labelTextColor="inherit:darker(1.6)"
+            animate={true}
+            motionStiffness={90}
+            motionDamping={15}
+            legends={[
+              {
+                "dataFrom": "keys",
+                "anchor": "bottom-right",
+                "direction": "column",
+                "justify": false,
+                "translateX": 120,
+                "translateY": 0,
+                "itemsSpacing": 2,
+                "itemWidth": 100,
+                "itemHeight": 20,
+                "itemDirection": "left-to-right",
+                "itemOpacity": 0.85,
+                "symbolSize": 20,
+                "effects": [
+                  {
+                    "on": "hover",
+                    "style": {
+                      "itemOpacity": 1
+                    }
+                  }
+                ]
+              }
             ]}
           />
         </div>
