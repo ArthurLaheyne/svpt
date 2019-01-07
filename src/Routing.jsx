@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from "react-router-dom";
 
 import Stats from './pages/Stats';
+import Profiles from './pages/Profiles';
 import Historique from './pages/Historique';
 import Home from './pages/Home';
 import GiphyNewPost from './pages/GiphyNewPost';
@@ -16,6 +17,9 @@ const Routing = () => (
     <Route path="/historique" component={Historique} />
     <Route path='/stats' render={() => (
       <Stats joueurConnecte="max" />
+    )}/>
+    <Route path='/profiles' render={() => (
+      <Profiles joueurConnecte="max" />
     )}/>
     <Route path="/home2" component={Home2} />
   </div>

@@ -1,0 +1,24 @@
+.profile-card {
+  background-color: red;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-card .left-block {
+	width: 150px;
+	float: left;
+  text-align: center;
+}
+
+.profile-card .right-block {
+	margin-left: 150px;
+}
+
+
+.profile-card .right-block ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  list-style: none;
+  font-size: 30px;
+}
